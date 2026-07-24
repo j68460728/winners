@@ -23,9 +23,15 @@ def get_url_data(url):
         else:
             df['ParsedDate'] = pd.NaT
             
-        if 'Div' in df.columns: df['LeagueCol'] = df['Div']
-        elif 'League' in df.columns: df['LeagueCol'] = df['League']
-        else: df['LeagueCol'] = 'Unknown'
+        if 'Div' in df.columns: 
+            df['LeagueCol'] = df['Div']
+        elif 'League' in df.columns: 
+            if 'Country' in df.columns:
+                df['LeagueCol'] = df['Country'] + ' - ' + df['League']
+            else:
+                df['LeagueCol'] = df['League']
+        else: 
+            df['LeagueCol'] = 'Unknown'
             
         if 'HomeTeam' in df.columns: df['HomeCol'] = df['HomeTeam']
         elif 'Home' in df.columns: df['HomeCol'] = df['Home']

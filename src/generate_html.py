@@ -25,19 +25,20 @@ LEAGUE_STYLES = {
     "G1": {"name": "Super League", "flag": "🇬🇷", "color": "#0d5eaf", "country": "Grecia"},
     "SC0": {"name": "Premiership", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "color": "#005eb8", "country": "Escocia"},
     "SC1": {"name": "Championship", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "color": "#005eb8", "country": "Escocia"},
-    "Liga Profesional": {"name": "Liga Profesional", "flag": "🇦🇷", "color": "#75aadb", "country": "Argentina"},
-    "Serie A": {"name": "Serie A", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
-    "Serie B": {"name": "Serie B", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
-    "Super League": {"name": "Super League", "flag": "🇨🇭", "color": "#ff0000", "country": "Suiza"},
-    "Superliga": {"name": "Superliga", "flag": "🇩🇰", "color": "#c60c30", "country": "Dinamarca"},
-    "Veikkausliiga": {"name": "Veikkausliiga", "flag": "🇫🇮", "color": "#002f6c", "country": "Finlandia"},
-    "Premier Division": {"name": "Premier Division", "flag": "🇮🇪", "color": "#169b62", "country": "Irlanda"},
-    "Liga MX": {"name": "Liga MX", "flag": "🇲🇽", "color": "#006847", "country": "México"},
-    "Eliteserien": {"name": "Eliteserien", "flag": "🇳🇴", "color": "#ef2b2d", "country": "Noruega"},
-    "Ekstraklasa": {"name": "Ekstraklasa", "flag": "🇵🇱", "color": "#dc143c", "country": "Polonia"},
-    "Allsvenskan": {"name": "Allsvenskan", "flag": "🇸🇪", "color": "#006aa7", "country": "Suecia"},
-    "MLS": {"name": "MLS", "flag": "🇺🇸", "color": "#001f5b", "country": "Estados Unidos"},
-    "J-League": {"name": "J-League", "flag": "🇯🇵", "color": "#bc002d", "country": "Japón"},
+    "Argentina - Liga Profesional": {"name": "Liga Profesional", "flag": "🇦🇷", "color": "#75aadb", "country": "Argentina"},
+    "Brazil - Serie A": {"name": "Serie A", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
+    "Brazil - Serie B": {"name": "Serie B", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
+    "Switzerland - Super League": {"name": "Super League", "flag": "🇨🇭", "color": "#ff0000", "country": "Suiza"},
+    "China - Super League": {"name": "Super League", "flag": "🇨🇳", "color": "#ff0000", "country": "China"},
+    "Denmark - Superliga": {"name": "Superliga", "flag": "🇩🇰", "color": "#c60c30", "country": "Dinamarca"},
+    "Finland - Veikkausliiga": {"name": "Veikkausliiga", "flag": "🇫🇮", "color": "#002f6c", "country": "Finlandia"},
+    "Ireland - Premier Division": {"name": "Premier Division", "flag": "🇮🇪", "color": "#169b62", "country": "Irlanda"},
+    "Mexico - Liga MX": {"name": "Liga MX", "flag": "🇲🇽", "color": "#006847", "country": "México"},
+    "Norway - Eliteserien": {"name": "Eliteserien", "flag": "🇳🇴", "color": "#ef2b2d", "country": "Noruega"},
+    "Poland - Ekstraklasa": {"name": "Ekstraklasa", "flag": "🇵🇱", "color": "#dc143c", "country": "Polonia"},
+    "Sweden - Allsvenskan": {"name": "Allsvenskan", "flag": "🇸🇪", "color": "#006aa7", "country": "Suecia"},
+    "USA - MLS": {"name": "MLS", "flag": "🇺🇸", "color": "#001f5b", "country": "Estados Unidos"},
+    "Japan - J-League": {"name": "J-League", "flag": "🇯🇵", "color": "#bc002d", "country": "Japón"},
     "Unknown": {"name": "Desconocida", "flag": "🌍", "color": "#8b949e", "country": "Mundial"}
 }
 
@@ -52,12 +53,22 @@ def sync_logos(active_teams):
     Sincroniza los escudos de los equipos desde FootballAssets hacia docs/assets/clubs/
     utilizando team_mapping.json y fuzzy matching.
     """
-    assets_dir = "FootballAssets/football-logos/logos"
+    assets_dir = "FootballAssets/football-logos/logos/clubs"
     dest_dir = "docs/assets/clubs"
     mapping_file = "docs/team_mapping.json"
     
     os.makedirs(dest_dir, exist_ok=True)
     
+    # Cargar aliases
+    aliases = {}
+    alias_path = "docs/team_aliases.json"
+    if os.path.exists(alias_path):
+        with open(alias_path, "r", encoding="utf-8") as f:
+            try:
+                aliases = json.load(f)
+            except:
+                pass
+
     # Cargar mapeo existente
     mapping = {}
     if os.path.exists(mapping_file):
@@ -79,13 +90,24 @@ def sync_logos(active_teams):
     logo_names = list(available_logos.keys())
     mapping_updated = False
     
-    for team in active_teams:
+    for original_team in active_teams:
+        team = aliases.get(original_team, original_team)
+        
         if team in mapping and mapping[team] != "":
             # Ya está mapeado, asegurarse que exista en dest_dir
             source_path = mapping[team]
             safe_team = get_safe_filename(team)
             dest_path = os.path.join(dest_dir, f"{safe_team}.png") # always save as safe_team.png
-            if not os.path.exists(dest_path) and os.path.exists(source_path):
+            
+            should_copy = False
+            if not os.path.exists(dest_path):
+                should_copy = True
+            elif os.path.exists(source_path):
+                # Check if file size differs to override cached images
+                if os.path.getsize(dest_path) != os.path.getsize(source_path):
+                    should_copy = True
+                    
+            if should_copy and os.path.exists(source_path):
                 shutil.copy2(source_path, dest_path)
             continue
             
@@ -121,6 +143,16 @@ def sync_logos(active_teams):
 
 def get_team_html(team_name):
     # Asume que si el escudo existe en docs/assets/clubs/team_name.png, se muestra
+    import json
+    alias_path = "docs/team_aliases.json"
+    if os.path.exists(alias_path):
+        try:
+            with open(alias_path, "r", encoding="utf-8") as f:
+                aliases = json.load(f)
+                team_name = aliases.get(team_name, team_name)
+        except:
+            pass
+
     safe_team = get_safe_filename(team_name)
     logo_path = f"assets/clubs/{safe_team}.png"
     if os.path.exists(f"docs/{logo_path}"):
