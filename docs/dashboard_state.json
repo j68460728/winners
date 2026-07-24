@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-07-24T14:30:45.802167+00:00",
+    "timestamp_utc": "2026-07-24T14:34:30.010384+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-07-24T06:11:41.986022+00:00",
+            "timestamp_utc": "2026-07-24T14:34:22.177927+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
