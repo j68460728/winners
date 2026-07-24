@@ -25,3 +25,6 @@ data/backups/*.sha256
 .vscode/
 .idea/
 .DS_Store
+
+# Directorio de recursos gráficos (imágenes masivas)
+FootballAssets/

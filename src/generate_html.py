@@ -1,6 +1,131 @@
 import json
 import os
-from datetime import datetime
+import datetime
+import shutil
+import difflib
+
+LEAGUE_STYLES = {
+    "E0": {"name": "Premier League", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "color": "#e90052", "country": "Inglaterra"},
+    "E1": {"name": "Championship", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "color": "#00f0ff", "country": "Inglaterra"},
+    "E2": {"name": "League One", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "color": "#00f0ff", "country": "Inglaterra"},
+    "E3": {"name": "League Two", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "color": "#00f0ff", "country": "Inglaterra"},
+    "EC": {"name": "National League", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "color": "#00f0ff", "country": "Inglaterra"},
+    "SP1": {"name": "La Liga", "flag": "🇪🇸", "color": "#ff4b44", "country": "España"},
+    "SP2": {"name": "Segunda División", "flag": "🇪🇸", "color": "#ff4b44", "country": "España"},
+    "D1": {"name": "Bundesliga", "flag": "🇩🇪", "color": "#d20515", "country": "Alemania"},
+    "D2": {"name": "2. Bundesliga", "flag": "🇩🇪", "color": "#d20515", "country": "Alemania"},
+    "I1": {"name": "Serie A", "flag": "🇮🇹", "color": "#008fd7", "country": "Italia"},
+    "I2": {"name": "Serie B", "flag": "🇮🇹", "color": "#008fd7", "country": "Italia"},
+    "F1": {"name": "Ligue 1", "flag": "🇫🇷", "color": "#da251d", "country": "Francia"},
+    "F2": {"name": "Ligue 2", "flag": "🇫🇷", "color": "#da251d", "country": "Francia"},
+    "B1": {"name": "Pro League", "flag": "🇧🇪", "color": "#e20613", "country": "Bélgica"},
+    "P1": {"name": "Primeira Liga", "flag": "🇵🇹", "color": "#00902c", "country": "Portugal"},
+    "N1": {"name": "Eredivisie", "flag": "🇳🇱", "color": "#ff4f00", "country": "Países Bajos"},
+    "T1": {"name": "Süper Lig", "flag": "🇹🇷", "color": "#e30a17", "country": "Turquía"},
+    "G1": {"name": "Super League", "flag": "🇬🇷", "color": "#0d5eaf", "country": "Grecia"},
+    "SC0": {"name": "Premiership", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "color": "#005eb8", "country": "Escocia"},
+    "SC1": {"name": "Championship", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "color": "#005eb8", "country": "Escocia"},
+    "Liga Profesional": {"name": "Liga Profesional", "flag": "🇦🇷", "color": "#75aadb", "country": "Argentina"},
+    "Serie A": {"name": "Serie A", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
+    "Serie B": {"name": "Serie B", "flag": "🇧🇷", "color": "#009c3b", "country": "Brasil"},
+    "Super League": {"name": "Super League", "flag": "🇨🇭", "color": "#ff0000", "country": "Suiza"},
+    "Superliga": {"name": "Superliga", "flag": "🇩🇰", "color": "#c60c30", "country": "Dinamarca"},
+    "Veikkausliiga": {"name": "Veikkausliiga", "flag": "🇫🇮", "color": "#002f6c", "country": "Finlandia"},
+    "Premier Division": {"name": "Premier Division", "flag": "🇮🇪", "color": "#169b62", "country": "Irlanda"},
+    "Liga MX": {"name": "Liga MX", "flag": "🇲🇽", "color": "#006847", "country": "México"},
+    "Eliteserien": {"name": "Eliteserien", "flag": "🇳🇴", "color": "#ef2b2d", "country": "Noruega"},
+    "Ekstraklasa": {"name": "Ekstraklasa", "flag": "🇵🇱", "color": "#dc143c", "country": "Polonia"},
+    "Allsvenskan": {"name": "Allsvenskan", "flag": "🇸🇪", "color": "#006aa7", "country": "Suecia"},
+    "MLS": {"name": "MLS", "flag": "🇺🇸", "color": "#001f5b", "country": "Estados Unidos"},
+    "J-League": {"name": "J-League", "flag": "🇯🇵", "color": "#bc002d", "country": "Japón"},
+    "Unknown": {"name": "Desconocida", "flag": "🌍", "color": "#8b949e", "country": "Mundial"}
+}
+
+def get_league_style(league_code):
+    return LEAGUE_STYLES.get(league_code, {"name": league_code, "flag": "🌍", "color": "#388bfd", "country": "Mundial"})
+
+def get_safe_filename(name):
+    return name.replace("/", "_").replace("\\", "_")
+
+def sync_logos(active_teams):
+    """
+    Sincroniza los escudos de los equipos desde FootballAssets hacia docs/assets/clubs/
+    utilizando team_mapping.json y fuzzy matching.
+    """
+    assets_dir = "FootballAssets/football-logos/logos"
+    dest_dir = "docs/assets/clubs"
+    mapping_file = "docs/team_mapping.json"
+    
+    os.makedirs(dest_dir, exist_ok=True)
+    
+    # Cargar mapeo existente
+    mapping = {}
+    if os.path.exists(mapping_file):
+        try:
+            with open(mapping_file, "r", encoding="utf-8") as f:
+                mapping = json.load(f)
+        except:
+            pass
+            
+    # Indexar todos los logos disponibles en FootballAssets
+    available_logos = {} # name -> path
+    if os.path.exists(assets_dir):
+        for root, dirs, files in os.walk(assets_dir):
+            for file in files:
+                if file.endswith((".png", ".svg")):
+                    name = os.path.splitext(file)[0]
+                    available_logos[name] = os.path.join(root, file)
+                    
+    logo_names = list(available_logos.keys())
+    mapping_updated = False
+    
+    for team in active_teams:
+        if team in mapping and mapping[team] != "":
+            # Ya está mapeado, asegurarse que exista en dest_dir
+            source_path = mapping[team]
+            safe_team = get_safe_filename(team)
+            dest_path = os.path.join(dest_dir, f"{safe_team}.png") # always save as safe_team.png
+            if not os.path.exists(dest_path) and os.path.exists(source_path):
+                shutil.copy2(source_path, dest_path)
+            continue
+            
+        if not logo_names:
+            continue
+            
+        # Intentar coincidencia exacta
+        if team in available_logos:
+            mapping[team] = available_logos[team]
+            mapping_updated = True
+            safe_team = get_safe_filename(team)
+            dest_path = os.path.join(dest_dir, f"{safe_team}.png")
+            shutil.copy2(available_logos[team], dest_path)
+            continue
+            
+        # Intentar coincidencia parcial (fuzzy)
+        matches = difflib.get_close_matches(team, logo_names, n=1, cutoff=0.6)
+        if matches:
+            best_match = matches[0]
+            mapping[team] = available_logos[best_match]
+            mapping_updated = True
+            safe_team = get_safe_filename(team)
+            dest_path = os.path.join(dest_dir, f"{safe_team}.png")
+            shutil.copy2(available_logos[best_match], dest_path)
+        else:
+            # Marcarlo como vacío para no buscarlo una y otra vez (o que el usuario lo llene manual)
+            mapping[team] = ""
+            mapping_updated = True
+            
+    if mapping_updated:
+        with open(mapping_file, "w", encoding="utf-8") as f:
+            json.dump(mapping, f, indent=4, ensure_ascii=False)
+
+def get_team_html(team_name):
+    # Asume que si el escudo existe en docs/assets/clubs/team_name.png, se muestra
+    safe_team = get_safe_filename(team_name)
+    logo_path = f"assets/clubs/{safe_team}.png"
+    if os.path.exists(f"docs/{logo_path}"):
+        return f'<img src="{logo_path}" alt="{team_name}" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>{team_name}</strong>'
+    return f'<strong>{team_name}</strong>'
 
 def generate_html():
     state_path = "docs/dashboard_state.json"
@@ -8,7 +133,7 @@ def generate_html():
         print("Error: No se encontró dashboard_state.json")
         return
         
-    with open(state_path, "r") as f:
+    with open(state_path, "r", encoding="utf-8") as f:
         state = json.load(f)
         
     exp = state.get("estado_experimento", {})
@@ -21,8 +146,20 @@ def generate_html():
     obs_dia = obs.get("observacion_dia", {})
     prox = obs.get("proximos_partidos", [])
     
+    # 1. Obtener equipos activos y sincronizar logos
+    hoy = obs_dia.get("partidos_hoy", [])
+    active_teams = set()
+    for p in hoy:
+        active_teams.add(p.get("local"))
+        active_teams.add(p.get("visitante"))
+    for p in prox:
+        active_teams.add(p.get("local"))
+        active_teams.add(p.get("visitante"))
+        
+    sync_logos(active_teams)
+    
     # Calculate some summary values
-    partidos_hoy_count = len(obs_dia.get("partidos_hoy", []))
+    partidos_hoy_count = len(hoy)
     partidos_prox_count = len(prox)
     winners_actividad = "Sí" if op.get("predicciones_pendientes", 0) > 0 or op.get("predicciones_liquidadas", 0) > 0 else "No"
     
@@ -39,9 +176,13 @@ def generate_html():
         
     timestamp = state.get("timestamp_utc", "")
     try:
-        dt = datetime.fromisoformat(timestamp)
-        timestamp_formatted = dt.strftime("%Y-%m-%d %H:%M:%S UTC")
-    except:
+        dt = datetime.datetime.fromisoformat(timestamp)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        colombia_tz = datetime.timezone(datetime.timedelta(hours=-5))
+        dt_local = dt.astimezone(colombia_tz)
+        timestamp_formatted = dt_local.strftime("%Y-%m-%d %H:%M:%S (Hora Local COL)")
+    except Exception as e:
         timestamp_formatted = timestamp
         
     html = f"""<!DOCTYPE html>
@@ -52,18 +193,30 @@ def generate_html():
     <title>Winners - Observatorio de Datos</title>
     <style>
         :root {{
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-muted: #86868b;
-            --primary-blue: #0066cc;
-            --success-green: #34c759;
-            --warning-yellow: #ffcc00;
-            --danger-red: #ff3b30;
-            --border-color: #e5e5ea;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary-blue: #58a6ff;
+            --success-green: #3fb950;
+            --warning-yellow: #d29922;
+            --danger-red: #f85149;
+            --border-color: #30363d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.5);
             --border-radius: 12px;
             --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --table-header-bg: #21262d;
+            --table-row-even: #0d1117;
+            --table-row-hover: #1f242c;
+            --empty-state-bg: #1c2128;
+            --badge-success-bg: rgba(46, 160, 67, 0.15);
+            --badge-success-text: #3fb950;
+            --badge-warning-bg: rgba(210, 153, 34, 0.15);
+            --badge-warning-text: #d29922;
+            --badge-error-bg: rgba(248, 81, 73, 0.15);
+            --badge-error-text: #f85149;
+            --badge-info-bg: rgba(56, 139, 253, 0.15);
+            --badge-info-text: #58a6ff;
         }}
         
         body {{
@@ -125,6 +278,7 @@ def generate_html():
             display: flex;
             align-items: center;
             gap: 10px;
+            color: var(--text-main);
         }}
         
         .summary-grid {{
@@ -168,7 +322,7 @@ def generate_html():
         }}
         
         th {{
-            background-color: #f9f9f9;
+            background-color: var(--table-header-bg);
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -177,11 +331,11 @@ def generate_html():
         }}
         
         tr:nth-child(even) {{
-            background-color: #fafafa;
+            background-color: var(--table-row-even);
         }}
         
         tr:hover {{
-            background-color: #f1f1f1;
+            background-color: var(--table-row-hover);
         }}
         
         .status-badge {{
@@ -194,10 +348,29 @@ def generate_html():
             gap: 6px;
         }}
         
-        .badge-success {{ background-color: #e3f8e9; color: #1e7e34; }}
-        .badge-warning {{ background-color: #fff8e1; color: #f57f17; }}
-        .badge-error {{ background-color: #fceceb; color: #d32f2f; }}
-        .badge-info {{ background-color: #e3f2fd; color: #1976d2; }}
+        .league-badge {{
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            gap: 10px;
+            background-color: transparent;
+        }}
+        
+        .league-name {{
+            font-weight: 600;
+            color: var(--text-main);
+        }}
+        
+        .league-flag {{
+            font-size: 1.2rem;
+        }}
+        
+        .badge-success {{ background-color: var(--badge-success-bg); color: var(--badge-success-text); }}
+        .badge-warning {{ background-color: var(--badge-warning-bg); color: var(--badge-warning-text); }}
+        .badge-error {{ background-color: var(--badge-error-bg); color: var(--badge-error-text); }}
+        .badge-info {{ background-color: var(--badge-info-bg); color: var(--badge-info-text); }}
         
         .footer {{
             text-align: center;
@@ -213,8 +386,9 @@ def generate_html():
             text-align: center;
             color: var(--text-muted);
             font-style: italic;
-            background-color: #f9f9f9;
+            background-color: var(--empty-state-bg);
             border-radius: 8px;
+            border: 1px solid var(--border-color);
         }}
         
         @media (max-width: 768px) {{
@@ -246,7 +420,7 @@ def generate_html():
                 </div>
                 <div class="metric">
                     <span class="metric-label">Última Actualización</span>
-                    <span class="metric-value">📅 {timestamp_formatted}</span>
+                    <span class="metric-value">📅 <span style="font-size: 1.1rem; color: var(--primary-blue);">{timestamp_formatted}</span></span>
                 </div>
                 <div class="metric">
                     <span class="metric-label">Partidos de Hoy</span>
@@ -310,7 +484,7 @@ def generate_html():
         <div class="card">
             <h3 class="card-title">📡 Estado de la Fuente de Datos</h3>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-                📅 <strong>Última consulta al proveedor:</strong> {fuente.get("ultima_consulta_utc")}
+                📅 <strong>Última consulta al proveedor:</strong> {timestamp_formatted}
             </p>
             <div style="overflow-x: auto;">
                 <table>
@@ -354,15 +528,24 @@ def generate_html():
                     <thead>
                         <tr>
                             <th>Competición</th>
+                            <th>País</th>
                             <th>Total Partidos Extraídos</th>
                         </tr>
                     </thead>
                     <tbody>
 """
     for liga in obs_dia.get("ligas_activas", []):
+        l_code = liga.get("competicion")
+        l_style = get_league_style(l_code)
         html += f"""
                         <tr>
-                            <td>{liga.get("competicion")}</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
+                                    <span class="league-flag">{l_style['flag']}</span>
+                                    <span class="league-name">{l_style['name']}</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">{l_style['country']}</span></td>
                             <td>{liga.get("partidos")}</td>
                         </tr>"""
                         
@@ -376,7 +559,6 @@ def generate_html():
         <div class="card">
             <h3 class="card-title">⚽ Partidos del Día (Hoy)</h3>
 """
-    hoy = obs_dia.get("partidos_hoy", [])
     if not hoy:
         html += '<div class="empty-state">No se encontraron partidos programados para el día de hoy en la fuente de datos.</div>'
     else:
@@ -386,19 +568,29 @@ def generate_html():
                     <thead>
                         <tr>
                             <th>Competición</th>
-                            <th>Hora</th>
+                            <th>País</th>
+                            <th>Hora Local (COL)</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
                     </thead>
                     <tbody>"""
         for p in hoy:
+            l_style = get_league_style(p.get("competicion"))
+            local_html = get_team_html(p.get("local"))
+            visit_html = get_team_html(p.get("visitante"))
             html += f"""
                         <tr>
-                            <td><span class="status-badge badge-info">{p.get("competicion")}</span></td>
-                            <td>{p.get("hora")}</td>
-                            <td><strong>{p.get("local")}</strong></td>
-                            <td><strong>{p.get("visitante")}</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
+                                    <span class="league-flag">{l_style['flag']}</span>
+                                    <span class="league-name">{l_style['name']}</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">{l_style['country']}</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">{p.get("hora_local", "N/A")}</span></td>
+                            <td>{local_html}</td>
+                            <td>{visit_html}</td>
                         </tr>"""
         html += """
                     </tbody>
@@ -422,20 +614,30 @@ def generate_html():
                         <tr>
                             <th>Fecha</th>
                             <th>Competición</th>
-                            <th>Hora</th>
+                            <th>País</th>
+                            <th>Hora Local (COL)</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
                     </thead>
                     <tbody>"""
         for p in prox:
+            l_style = get_league_style(p.get("competicion"))
+            local_html = get_team_html(p.get("local"))
+            visit_html = get_team_html(p.get("visitante"))
             html += f"""
                         <tr>
                             <td>{p.get("fecha")}</td>
-                            <td><span class="status-badge badge-info">{p.get("competicion")}</span></td>
-                            <td>{p.get("hora")}</td>
-                            <td><strong>{p.get("local")}</strong></td>
-                            <td><strong>{p.get("visitante")}</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
+                                    <span class="league-flag">{l_style['flag']}</span>
+                                    <span class="league-name">{l_style['name']}</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">{l_style['country']}</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">{p.get("hora_local", "N/A")}</span></td>
+                            <td>{local_html}</td>
+                            <td>{visit_html}</td>
                         </tr>"""
         html += """
                     </tbody>

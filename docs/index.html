@@ -6,18 +6,30 @@
     <title>Winners - Observatorio de Datos</title>
     <style>
         :root {
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-muted: #86868b;
-            --primary-blue: #0066cc;
-            --success-green: #34c759;
-            --warning-yellow: #ffcc00;
-            --danger-red: #ff3b30;
-            --border-color: #e5e5ea;
-            --shadow: 0 4px 12px rgba(0,0,0,0.05);
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary-blue: #58a6ff;
+            --success-green: #3fb950;
+            --warning-yellow: #d29922;
+            --danger-red: #f85149;
+            --border-color: #30363d;
+            --shadow: 0 4px 12px rgba(0,0,0,0.5);
             --border-radius: 12px;
             --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --table-header-bg: #21262d;
+            --table-row-even: #0d1117;
+            --table-row-hover: #1f242c;
+            --empty-state-bg: #1c2128;
+            --badge-success-bg: rgba(46, 160, 67, 0.15);
+            --badge-success-text: #3fb950;
+            --badge-warning-bg: rgba(210, 153, 34, 0.15);
+            --badge-warning-text: #d29922;
+            --badge-error-bg: rgba(248, 81, 73, 0.15);
+            --badge-error-text: #f85149;
+            --badge-info-bg: rgba(56, 139, 253, 0.15);
+            --badge-info-text: #58a6ff;
         }
         
         body {
@@ -79,6 +91,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            color: var(--text-main);
         }
         
         .summary-grid {
@@ -122,7 +135,7 @@
         }
         
         th {
-            background-color: #f9f9f9;
+            background-color: var(--table-header-bg);
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -131,11 +144,11 @@
         }
         
         tr:nth-child(even) {
-            background-color: #fafafa;
+            background-color: var(--table-row-even);
         }
         
         tr:hover {
-            background-color: #f1f1f1;
+            background-color: var(--table-row-hover);
         }
         
         .status-badge {
@@ -148,10 +161,29 @@
             gap: 6px;
         }
         
-        .badge-success { background-color: #e3f8e9; color: #1e7e34; }
-        .badge-warning { background-color: #fff8e1; color: #f57f17; }
-        .badge-error { background-color: #fceceb; color: #d32f2f; }
-        .badge-info { background-color: #e3f2fd; color: #1976d2; }
+        .league-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            gap: 10px;
+            background-color: transparent;
+        }
+        
+        .league-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        
+        .league-flag {
+            font-size: 1.2rem;
+        }
+        
+        .badge-success { background-color: var(--badge-success-bg); color: var(--badge-success-text); }
+        .badge-warning { background-color: var(--badge-warning-bg); color: var(--badge-warning-text); }
+        .badge-error { background-color: var(--badge-error-bg); color: var(--badge-error-text); }
+        .badge-info { background-color: var(--badge-info-bg); color: var(--badge-info-text); }
         
         .footer {
             text-align: center;
@@ -167,8 +199,9 @@
             text-align: center;
             color: var(--text-muted);
             font-style: italic;
-            background-color: #f9f9f9;
+            background-color: var(--empty-state-bg);
             border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
         
         @media (max-width: 768px) {
@@ -200,7 +233,7 @@
                 </div>
                 <div class="metric">
                     <span class="metric-label">Última Actualización</span>
-                    <span class="metric-value">📅 2026-07-24 15:53:36 UTC</span>
+                    <span class="metric-value">📅 <span style="font-size: 1.1rem; color: var(--primary-blue);">2026-07-24 11:26:12 (Hora Local COL)</span></span>
                 </div>
                 <div class="metric">
                     <span class="metric-label">Partidos de Hoy</span>
@@ -264,7 +297,7 @@
         <div class="card">
             <h3 class="card-title">📡 Estado de la Fuente de Datos</h3>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-                📅 <strong>Última consulta al proveedor:</strong> 2026-07-24T15:53:27.335583+00:00
+                📅 <strong>Última consulta al proveedor:</strong> 2026-07-24 11:26:12 (Hora Local COL)
             </p>
             <div style="overflow-x: auto;">
                 <table>
@@ -308,61 +341,140 @@
                     <thead>
                         <tr>
                             <th>Competición</th>
+                            <th>País</th>
                             <th>Total Partidos Extraídos</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         <tr>
-                            <td>MLS</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Estados Unidos</span></td>
                             <td>15</td>
                         </tr>
                         <tr>
-                            <td>Super League</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Suiza</span></td>
                             <td>14</td>
                         </tr>
                         <tr>
-                            <td>Superliga</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Dinamarca</span></td>
                             <td>14</td>
                         </tr>
                         <tr>
-                            <td>Liga Profesional</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Argentina</span></td>
                             <td>12</td>
                         </tr>
                         <tr>
-                            <td>SP2</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff4b44;">
+                                    <span class="league-flag">🇪🇸</span>
+                                    <span class="league-name">Segunda División</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">España</span></td>
                             <td>11</td>
                         </tr>
                         <tr>
-                            <td>Serie A</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Brasil</span></td>
                             <td>10</td>
                         </tr>
                         <tr>
-                            <td>Ekstraklasa</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Polonia</span></td>
                             <td>9</td>
                         </tr>
                         <tr>
-                            <td>Allsvenskan</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Suecia</span></td>
                             <td>8</td>
                         </tr>
                         <tr>
-                            <td>Liga MX</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">México</span></td>
                             <td>7</td>
                         </tr>
                         <tr>
-                            <td>Eliteserien</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Noruega</span></td>
                             <td>7</td>
                         </tr>
                         <tr>
-                            <td>Veikkausliiga</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Finlandia</span></td>
                             <td>6</td>
                         </tr>
                         <tr>
-                            <td>Premier Division</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #169b62;">
+                                    <span class="league-flag">🇮🇪</span>
+                                    <span class="league-name">Premier Division</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Irlanda</span></td>
                             <td>3</td>
                         </tr>
                         <tr>
-                            <td>B1</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #e20613;">
+                                    <span class="league-flag">🇧🇪</span>
+                                    <span class="league-name">Pro League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted);">Bélgica</span></td>
                             <td>1</td>
                         </tr>
                     </tbody>
@@ -379,77 +491,144 @@
                     <thead>
                         <tr>
                             <th>Competición</th>
-                            <th>Hora</th>
+                            <th>País</th>
+                            <th>Hora Local (COL)</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>20:45</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">14:45</span></td>
                             <td><strong>Gimnasia Mendoza</strong></td>
                             <td><strong>Central Cordoba</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>23:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:00</span></td>
                             <td><strong>Racing Club</strong></td>
                             <td><strong>Gimnasia L.P.</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>23:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:00</span></td>
                             <td><strong>Velez Sarsfield</strong></td>
                             <td><strong>Instituto</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>18:00</td>
-                            <td><strong>Viborg</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:00</span></td>
+                            <td><img src="assets/clubs/Viborg.png" alt="Viborg" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Viborg</strong></td>
                             <td><strong>Odense</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>17:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
                             <td><strong>Jaro</strong></td>
                             <td><strong>SJK</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Premier Division</span></td>
-                            <td>20:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #169b62;">
+                                    <span class="league-flag">🇮🇪</span>
+                                    <span class="league-name">Premier Division</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Irlanda</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">14:00</span></td>
                             <td><strong>St. Patricks</strong></td>
                             <td><strong>Dundalk</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>17:00</td>
-                            <td><strong>Radomiak Radom</strong></td>
-                            <td><strong>Wieczysta Krakow</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
+                            <td><img src="assets/clubs/Radomiak Radom.png" alt="Radomiak Radom" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Radomiak Radom</strong></td>
+                            <td><img src="assets/clubs/Wieczysta Krakow.png" alt="Wieczysta Krakow" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Wieczysta Krakow</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>19:30</td>
-                            <td><strong>Pogon Szczecin</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:30</span></td>
+                            <td><img src="assets/clubs/Pogon Szczecin.png" alt="Pogon Szczecin" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Pogon Szczecin</strong></td>
                             <td><strong>Legia</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>16:30</td>
-                            <td><strong>UTA Arad</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:30</span></td>
+                            <td><img src="assets/clubs/UTA Arad.png" alt="UTA Arad" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>UTA Arad</strong></td>
                             <td><strong>Otelul</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>19:30</td>
-                            <td><strong>FC Arges</strong></td>
-                            <td><strong>Petrolul</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:30</span></td>
+                            <td><img src="assets/clubs/FC Arges.png" alt="FC Arges" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>FC Arges</strong></td>
+                            <td><img src="assets/clubs/Petrolul.png" alt="Petrolul" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Petrolul</strong></td>
                         </tr>
                         <tr>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>18:00</td>
-                            <td><strong>Vasteras SK</strong></td>
-                            <td><strong>Orgryte</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:00</span></td>
+                            <td><img src="assets/clubs/Vasteras SK.png" alt="Vasteras SK" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Vasteras SK</strong></td>
+                            <td><img src="assets/clubs/Orgryte.png" alt="Orgryte" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Orgryte</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -466,7 +645,8 @@
                         <tr>
                             <th>Fecha</th>
                             <th>Competición</th>
-                            <th>Hora</th>
+                            <th>País</th>
+                            <th>Hora Local (COL)</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
@@ -474,603 +654,1119 @@
                     <tbody>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>01:15</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:15</span></td>
                             <td><strong>Huracan</strong></td>
                             <td><strong>Banfield</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>01:15</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:15</span></td>
                             <td><strong>Platense</strong></td>
                             <td><strong>Union de Santa Fe</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga MX</span></td>
-                            <td>04:00</td>
-                            <td><strong>Atlante</strong></td>
-                            <td><strong>Club America</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">México</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">22:00</span></td>
+                            <td><img src="assets/clubs/Atlante.png" alt="Atlante" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Atlante</strong></td>
+                            <td><img src="assets/clubs/Club America.png" alt="Club America" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Club America</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga MX</span></td>
-                            <td>04:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">México</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">22:00</span></td>
                             <td><strong>Club Tijuana</strong></td>
-                            <td><strong>Club Leon</strong></td>
+                            <td><img src="assets/clubs/Club Leon.png" alt="Club Leon" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Club Leon</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>10:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">04:30</span></td>
                             <td><strong>Qingdao Hainiu</strong></td>
                             <td><strong>Tianjin Jinmen Tiger</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>12:35</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">06:35</span></td>
                             <td><strong>Liaoning Tieren</strong></td>
                             <td><strong>Qingdao West Coast</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>12:35</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">06:35</span></td>
                             <td><strong>Shanghai Port</strong></td>
                             <td><strong>Shanghai Shenhua</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>13:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
                             <td><strong>Wuhan Three Towns</strong></td>
                             <td><strong>Chongqing Tonglianglong</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>13:45</td>
-                            <td><strong>Jagiellonia</strong></td>
-                            <td><strong>Korona Kielce</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:45</span></td>
+                            <td><img src="assets/clubs/Jagiellonia.png" alt="Jagiellonia" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Jagiellonia</strong></td>
+                            <td><img src="assets/clubs/Korona Kielce.png" alt="Korona Kielce" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Korona Kielce</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>14:00</td>
-                            <td><strong>Degerfors</strong></td>
-                            <td><strong>Djurgarden</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">08:00</span></td>
+                            <td><img src="assets/clubs/Degerfors.png" alt="Degerfors" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Degerfors</strong></td>
+                            <td><img src="assets/clubs/Djurgarden.png" alt="Djurgarden" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Djurgarden</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>14:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">08:30</span></td>
                             <td><strong>Mariehamn</strong></td>
                             <td><strong>AC Oulu</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>15:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:00</span></td>
                             <td><strong>KuPS</strong></td>
                             <td><strong>VPS</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>15:00</td>
-                            <td><strong>Kristiansund</strong></td>
-                            <td><strong>Start</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:00</span></td>
+                            <td><img src="assets/clubs/Kristiansund.png" alt="Kristiansund" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Kristiansund</strong></td>
+                            <td><img src="assets/clubs/Start.png" alt="Start" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Start</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>15:30</td>
-                            <td><strong>Farul Constanta</strong></td>
-                            <td><strong>Corvinul</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/Farul Constanta.png" alt="Farul Constanta" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Farul Constanta</strong></td>
+                            <td><img src="assets/clubs/Corvinul.png" alt="Corvinul" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Corvinul</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>16:30</td>
-                            <td><strong>Gornik Zabrze</strong></td>
-                            <td><strong>Slask Wroclaw</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:30</span></td>
+                            <td><img src="assets/clubs/Gornik Zabrze.png" alt="Gornik Zabrze" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Gornik Zabrze</strong></td>
+                            <td><img src="assets/clubs/Slask Wroclaw.png" alt="Slask Wroclaw" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Slask Wroclaw</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>16:30</td>
-                            <td><strong>Kalmar</strong></td>
-                            <td><strong>Mjallby</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:30</span></td>
+                            <td><img src="assets/clubs/Kalmar.png" alt="Kalmar" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Kalmar</strong></td>
+                            <td><img src="assets/clubs/Mjallby.png" alt="Mjallby" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Mjallby</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>17:00</td>
-                            <td><strong>Aarhus</strong></td>
-                            <td><strong>Brondby</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
+                            <td><img src="assets/clubs/Aarhus.png" alt="Aarhus" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Aarhus</strong></td>
+                            <td><img src="assets/clubs/Brondby.png" alt="Brondby" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Brondby</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Premier Division</span></td>
-                            <td>17:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #169b62;">
+                                    <span class="league-flag">🇮🇪</span>
+                                    <span class="league-name">Premier Division</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Irlanda</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
                             <td><strong>Galway</strong></td>
                             <td><strong>Waterford</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>17:00</td>
-                            <td><strong>Lausanne</strong></td>
-                            <td><strong>Grasshoppers</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
+                            <td><img src="assets/clubs/Lausanne.png" alt="Lausanne" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Lausanne</strong></td>
+                            <td><img src="assets/clubs/Grasshoppers.png" alt="Grasshoppers" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Grasshoppers</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>17:00</td>
-                            <td><strong>Servette</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
+                            <td><img src="assets/clubs/Servette.png" alt="Servette" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Servette</strong></td>
                             <td><strong>Basel</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>18:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:30</span></td>
                             <td><strong>Dinamo Bucuresti</strong></td>
-                            <td><strong>Univ. Craiova</strong></td>
+                            <td><img src="assets/clubs/Univ. Craiova.png" alt="Univ. Craiova" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Univ. Craiova</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>18:45</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:45</span></td>
                             <td><strong>Estudiantes Rio Cuarto</strong></td>
                             <td><strong>Tigre</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>19:15</td>
-                            <td><strong>Lech Poznan</strong></td>
-                            <td><strong>Cracovia</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:15</span></td>
+                            <td><img src="assets/clubs/Lech Poznan.png" alt="Lech Poznan" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Lech Poznan</strong></td>
+                            <td><img src="assets/clubs/Cracovia.png" alt="Cracovia" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Cracovia</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>19:30</td>
-                            <td><strong>Luzern</strong></td>
-                            <td><strong>Thun</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:30</span></td>
+                            <td><img src="assets/clubs/Luzern.png" alt="Luzern" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Luzern</strong></td>
+                            <td><img src="assets/clubs/Thun.png" alt="Thun" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Thun</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Premier Division</span></td>
-                            <td>19:45</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #169b62;">
+                                    <span class="league-flag">🇮🇪</span>
+                                    <span class="league-name">Premier Division</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Irlanda</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:45</span></td>
                             <td><strong>Sligo Rovers</strong></td>
                             <td><strong>Drogheda</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>21:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">15:00</span></td>
                             <td><strong>Newells Old Boys</strong></td>
                             <td><strong>Talleres Cordoba</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>22:30</td>
-                            <td><strong>Athletico-PR</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">16:30</span></td>
+                            <td><img src="assets/clubs/Athletico-PR.png" alt="Athletico-PR" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Athletico-PR</strong></td>
                             <td><strong>Internacional</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>22:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">16:30</span></td>
                             <td><strong>Santos</strong></td>
                             <td><strong>Chapecoense-SC</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>23:15</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:15</span></td>
                             <td><strong>River Plate</strong></td>
                             <td><strong>Barracas Central</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-25</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>23:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:30</span></td>
                             <td><strong>New York Red Bulls</strong></td>
                             <td><strong>Charlotte</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga MX</span></td>
-                            <td>00:07</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">México</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:07</span></td>
                             <td><strong>Guadalajara Chivas</strong></td>
                             <td><strong>Juarez</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:15</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:15</span></td>
                             <td><strong>Columbus Crew</strong></td>
                             <td><strong>FC Cincinnati</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>00:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
                             <td><strong>Vasco</strong></td>
                             <td><strong>Mirassol</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
-                            <td><strong>CF Montreal</strong></td>
-                            <td><strong>Inter Miami</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
+                            <td><img src="assets/clubs/CF Montreal.png" alt="CF Montreal" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>CF Montreal</strong></td>
+                            <td><img src="assets/clubs/Inter Miami.png" alt="Inter Miami" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Inter Miami</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
-                            <td><strong>DC United</strong></td>
-                            <td><strong>Toronto FC</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
+                            <td><img src="assets/clubs/DC United.png" alt="DC United" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>DC United</strong></td>
+                            <td><img src="assets/clubs/Toronto FC.png" alt="Toronto FC" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Toronto FC</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
                             <td><strong>New England Revolution</strong></td>
-                            <td><strong>Atlanta Utd</strong></td>
+                            <td><img src="assets/clubs/Atlanta Utd.png" alt="Atlanta Utd" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Atlanta Utd</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
                             <td><strong>New York City</strong></td>
                             <td><strong>Chicago Fire</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
                             <td><strong>Orlando City</strong></td>
                             <td><strong>Nashville SC</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>00:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">18:30</span></td>
                             <td><strong>Philadelphia Union</strong></td>
                             <td><strong>Seattle Sounders</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>01:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:30</span></td>
                             <td><strong>Lanus</strong></td>
                             <td><strong>San Lorenzo</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>01:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:30</span></td>
                             <td><strong>Houston Dynamo</strong></td>
-                            <td><strong>Austin FC</strong></td>
+                            <td><img src="assets/clubs/Austin FC.png" alt="Austin FC" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Austin FC</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>01:30</td>
-                            <td><strong>Minnesota United</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:30</span></td>
+                            <td><img src="assets/clubs/Minnesota United.png" alt="Minnesota United" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Minnesota United</strong></td>
                             <td><strong>Vancouver Whitecaps</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>01:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">19:30</span></td>
                             <td><strong>St. Louis City</strong></td>
                             <td><strong>Colorado Rapids</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>02:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">20:30</span></td>
                             <td><strong>San Diego FC</strong></td>
                             <td><strong>FC Dallas</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>03:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">21:30</span></td>
                             <td><strong>Los Angeles FC</strong></td>
-                            <td><strong>Sporting Kansas City</strong></td>
+                            <td><img src="assets/clubs/Sporting Kansas City.png" alt="Sporting Kansas City" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sporting Kansas City</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>03:30</td>
-                            <td><strong>Portland Timbers</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">21:30</span></td>
+                            <td><img src="assets/clubs/Portland Timbers.png" alt="Portland Timbers" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Portland Timbers</strong></td>
                             <td><strong>Real Salt Lake</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">MLS</span></td>
-                            <td>03:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #001f5b;">
+                                    <span class="league-flag">🇺🇸</span>
+                                    <span class="league-name">MLS</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Estados Unidos</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">21:30</span></td>
                             <td><strong>San Jose Earthquakes</strong></td>
                             <td><strong>Los Angeles Galaxy</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga MX</span></td>
-                            <td>04:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">México</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">22:00</span></td>
                             <td><strong>Santos Laguna</strong></td>
                             <td><strong>Atlas</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga MX</span></td>
-                            <td>04:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006847;">
+                                    <span class="league-flag">🇲🇽</span>
+                                    <span class="league-name">Liga MX</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">México</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">22:00</span></td>
                             <td><strong>Tigres UANL</strong></td>
                             <td><strong>Atl. San Luis</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>12:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">06:00</span></td>
                             <td><strong>Yunnan Yukun</strong></td>
                             <td><strong>Shenzhen Xinpengcheng</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>12:35</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">06:35</span></td>
                             <td><strong>Chengdu Rongcheng</strong></td>
                             <td><strong>Beijing Guoan</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>12:35</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">06:35</span></td>
                             <td><strong>Shandong Taishan</strong></td>
                             <td><strong>Henan Songshan Longmen</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>13:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
                             <td><strong>Zhejiang Professional</strong></td>
                             <td><strong>Dalian Yingbo</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>13:00</td>
-                            <td><strong>Sonderjyske</strong></td>
-                            <td><strong>Midtjylland</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
+                            <td><img src="assets/clubs/Sonderjyske.png" alt="Sonderjyske" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sonderjyske</strong></td>
+                            <td><img src="assets/clubs/Midtjylland.png" alt="Midtjylland" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Midtjylland</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>13:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
                             <td><strong>Ilves</strong></td>
                             <td><strong>Lahti</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>13:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
                             <td><strong>Inter Turku</strong></td>
                             <td><strong>Gnistan</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>13:00</td>
-                            <td><strong>Brommapojkarna</strong></td>
-                            <td><strong>Hammarby</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
+                            <td><img src="assets/clubs/Brommapojkarna.png" alt="Brommapojkarna" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Brommapojkarna</strong></td>
+                            <td><img src="assets/clubs/Hammarby.png" alt="Hammarby" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Hammarby</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>13:00</td>
-                            <td><strong>Sirius</strong></td>
-                            <td><strong>Goteborg</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
+                            <td><img src="assets/clubs/Sirius.png" alt="Sirius" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sirius</strong></td>
+                            <td><img src="assets/clubs/Goteborg.png" alt="Goteborg" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Goteborg</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>13:00</td>
-                            <td><strong>Young Boys</strong></td>
-                            <td><strong>Sion</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:00</span></td>
+                            <td><img src="assets/clubs/Young Boys.png" alt="Young Boys" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Young Boys</strong></td>
+                            <td><img src="assets/clubs/Sion.png" alt="Sion" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sion</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>13:30</td>
-                            <td><strong>Brann</strong></td>
-                            <td><strong>Valerenga</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:30</span></td>
+                            <td><img src="assets/clubs/Brann.png" alt="Brann" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Brann</strong></td>
+                            <td><img src="assets/clubs/Valerenga.png" alt="Valerenga" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Valerenga</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>13:45</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">07:45</span></td>
                             <td><strong>Rakow</strong></td>
-                            <td><strong>Wisla Plock</strong></td>
+                            <td><img src="assets/clubs/Wisla Plock.png" alt="Wisla Plock" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Wisla Plock</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>15:00</td>
-                            <td><strong>FC Copenhagen</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:00</span></td>
+                            <td><img src="assets/clubs/FC Copenhagen.png" alt="FC Copenhagen" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>FC Copenhagen</strong></td>
                             <td><strong>Lyngby</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Veikkausliiga</span></td>
-                            <td>15:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #002f6c;">
+                                    <span class="league-flag">🇫🇮</span>
+                                    <span class="league-name">Veikkausliiga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Finlandia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:00</span></td>
                             <td><strong>HJK</strong></td>
                             <td><strong>TPS</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>15:30</td>
-                            <td><strong>Sepsi Sf. Gheorghe</strong></td>
-                            <td><strong>U. Cluj</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/Sepsi Sf. Gheorghe.png" alt="Sepsi Sf. Gheorghe" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sepsi Sf. Gheorghe</strong></td>
+                            <td><img src="assets/clubs/U. Cluj.png" alt="U. Cluj" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>U. Cluj</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>15:30</td>
-                            <td><strong>GAIS</strong></td>
-                            <td><strong>Halmstad</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/GAIS.png" alt="GAIS" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>GAIS</strong></td>
+                            <td><img src="assets/clubs/Halmstad.png" alt="Halmstad" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Halmstad</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Allsvenskan</span></td>
-                            <td>15:30</td>
-                            <td><strong>Malmo FF</strong></td>
-                            <td><strong>Elfsborg</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #006aa7;">
+                                    <span class="league-flag">🇸🇪</span>
+                                    <span class="league-name">Allsvenskan</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suecia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/Malmo FF.png" alt="Malmo FF" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Malmo FF</strong></td>
+                            <td><img src="assets/clubs/Elfsborg.png" alt="Elfsborg" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Elfsborg</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>15:30</td>
-                            <td><strong>Lugano</strong></td>
-                            <td><strong>Vaduz</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/Lugano.png" alt="Lugano" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Lugano</strong></td>
+                            <td><img src="assets/clubs/Vaduz.png" alt="Vaduz" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Vaduz</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Super League</span></td>
-                            <td>15:30</td>
-                            <td><strong>St. Gallen</strong></td>
-                            <td><strong>Zurich</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ff0000;">
+                                    <span class="league-flag">🇨🇭</span>
+                                    <span class="league-name">Super League</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Suiza</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">09:30</span></td>
+                            <td><img src="assets/clubs/St. Gallen.png" alt="St. Gallen" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>St. Gallen</strong></td>
+                            <td><img src="assets/clubs/Zurich.png" alt="Zurich" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Zurich</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>16:00</td>
-                            <td><strong>KFUM Oslo</strong></td>
-                            <td><strong>Molde</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:00</span></td>
+                            <td><img src="assets/clubs/KFUM Oslo.png" alt="KFUM Oslo" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>KFUM Oslo</strong></td>
+                            <td><img src="assets/clubs/Molde.png" alt="Molde" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Molde</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>16:00</td>
-                            <td><strong>Sandefjord</strong></td>
-                            <td><strong>Bodo/Glimt</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:00</span></td>
+                            <td><img src="assets/clubs/Sandefjord.png" alt="Sandefjord" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sandefjord</strong></td>
+                            <td><img src="assets/clubs/Bodo_Glimt.png" alt="Bodo/Glimt" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Bodo/Glimt</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>16:00</td>
-                            <td><strong>Sarpsborg 08</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:00</span></td>
+                            <td><img src="assets/clubs/Sarpsborg 08.png" alt="Sarpsborg 08" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Sarpsborg 08</strong></td>
                             <td><strong>HamKam</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>16:30</td>
-                            <td><strong>Widzew Lodz</strong></td>
-                            <td><strong>Motor Lublin</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">10:30</span></td>
+                            <td><img src="assets/clubs/Widzew Lodz.png" alt="Widzew Lodz" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Widzew Lodz</strong></td>
+                            <td><img src="assets/clubs/Motor Lublin.png" alt="Motor Lublin" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Motor Lublin</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>17:00</td>
-                            <td><strong>Horsens</strong></td>
-                            <td><strong>Nordsjaelland</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">11:00</span></td>
+                            <td><img src="assets/clubs/Horsens.png" alt="Horsens" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Horsens</strong></td>
+                            <td><img src="assets/clubs/Nordsjaelland.png" alt="Nordsjaelland" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Nordsjaelland</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Eliteserien</span></td>
-                            <td>18:15</td>
-                            <td><strong>Aalesund</strong></td>
-                            <td><strong>Viking</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #ef2b2d;">
+                                    <span class="league-flag">🇳🇴</span>
+                                    <span class="league-name">Eliteserien</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Noruega</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:15</span></td>
+                            <td><img src="assets/clubs/Aalesund.png" alt="Aalesund" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Aalesund</strong></td>
+                            <td><img src="assets/clubs/Viking.png" alt="Viking" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Viking</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Superliga</span></td>
-                            <td>18:30</td>
-                            <td><strong>Csikszereda M. Ciuc</strong></td>
-                            <td><strong>FCSB</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #c60c30;">
+                                    <span class="league-flag">🇩🇰</span>
+                                    <span class="league-name">Superliga</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Dinamarca</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">12:30</span></td>
+                            <td><img src="assets/clubs/Csikszereda M. Ciuc.png" alt="Csikszereda M. Ciuc" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Csikszereda M. Ciuc</strong></td>
+                            <td><img src="assets/clubs/FCSB.png" alt="FCSB" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>FCSB</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>19:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:00</span></td>
                             <td><strong>Atl. Tucuman</strong></td>
                             <td><strong>Ind. Rivadavia</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Ekstraklasa</span></td>
-                            <td>19:15</td>
-                            <td><strong>Wisla</strong></td>
-                            <td><strong>GKS Katowice</strong></td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #dc143c;">
+                                    <span class="league-flag">🇵🇱</span>
+                                    <span class="league-name">Ekstraklasa</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Polonia</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">13:15</span></td>
+                            <td><img src="assets/clubs/Wisla.png" alt="Wisla" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Wisla</strong></td>
+                            <td><img src="assets/clubs/GKS Katowice.png" alt="GKS Katowice" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>GKS Katowice</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>20:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">14:00</span></td>
                             <td><strong>Bahia</strong></td>
                             <td><strong>Corinthians</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>20:00</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">14:00</span></td>
                             <td><strong>Cruzeiro</strong></td>
                             <td><strong>Botafogo RJ</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>21:15</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">15:15</span></td>
                             <td><strong>Estudiantes L.P.</strong></td>
                             <td><strong>Independiente</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>22:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">16:30</span></td>
                             <td><strong>Bragantino</strong></td>
                             <td><strong>Coritiba</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>22:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">16:30</span></td>
                             <td><strong>Flamengo RJ</strong></td>
                             <td><strong>Sao Paulo</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>22:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">16:30</span></td>
                             <td><strong>Gremio</strong></td>
                             <td><strong>Fluminense</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Liga Profesional</span></td>
-                            <td>23:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #75aadb;">
+                                    <span class="league-flag">🇦🇷</span>
+                                    <span class="league-name">Liga Profesional</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Argentina</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:30</span></td>
                             <td><strong>Dep. Riestra</strong></td>
                             <td><strong>Boca Juniors</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>23:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:30</span></td>
                             <td><strong>Palmeiras</strong></td>
-                            <td><strong>Atletico-MG</strong></td>
+                            <td><img src="assets/clubs/Atletico-MG.png" alt="Atletico-MG" width="20" height="20" style="vertical-align: middle; margin-right: 8px;"><strong>Atletico-MG</strong></td>
                         </tr>
                         <tr>
                             <td>2026-07-26</td>
-                            <td><span class="status-badge badge-info">Serie A</span></td>
-                            <td>23:30</td>
+                            <td>
+                                <span class="league-badge" style="border: 1px solid #009c3b;">
+                                    <span class="league-flag">🇧🇷</span>
+                                    <span class="league-name">Serie A</span>
+                                </span>
+                            </td>
+                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">Brasil</span></td>
+                            <td><span style="color: var(--primary-blue); font-weight: 600;">17:30</span></td>
                             <td><strong>Remo</strong></td>
                             <td><strong>Vitoria</strong></td>
                         </tr>
@@ -1082,7 +1778,7 @@
         <!-- FOOTER -->
         <footer class="footer">
             <p><strong>Sistema:</strong> Winners v1.0.0 | <strong>Proveedor:</strong> football-data.co.uk</p>
-            <p>Generado el 📅 2026-07-24 15:53:36 UTC</p>
+            <p>Generado el 📅 2026-07-24 11:26:12 (Hora Local COL)</p>
             <p style="margin-top: 10px; opacity: 0.7;">Repositorio GitHub - Observatorio Estático</p>
         </footer>
     </div>

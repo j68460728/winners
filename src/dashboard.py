@@ -35,7 +35,22 @@ def get_url_data(url):
         elif 'Away' in df.columns: df['AwayCol'] = df['Away']
         else: df['AwayCol'] = 'Unknown'
             
-        if 'Time' not in df.columns: df['Time'] = 'N/A'
+        if 'Time' not in df.columns:
+            df['Time'] = 'N/A'
+            df['Time_Local'] = 'N/A'
+        else:
+            df['Time'] = df['Time'].fillna('N/A')
+            def convert_time(row):
+                if pd.isna(row['ParsedDate']) or row['Time'] == 'N/A':
+                    return 'N/A'
+                try:
+                    dt_str = row['ParsedDate'].strftime('%Y-%m-%d') + ' ' + str(row['Time'])
+                    dt_london = pd.to_datetime(dt_str).tz_localize('Europe/London')
+                    dt_bogota = dt_london.tz_convert('America/Bogota')
+                    return dt_bogota.strftime('%H:%M')
+                except:
+                    return 'N/A'
+            df['Time_Local'] = df.apply(convert_time, axis=1)
             
         return df, "OK"
     except Exception as e:
@@ -77,6 +92,7 @@ def audit_data_source():
         partidos_hoy.append({
             "competicion": str(row['LeagueCol']),
             "hora": str(row['Time']) if pd.notna(row['Time']) else "N/A",
+            "hora_local": str(row['Time_Local']) if 'Time_Local' in row and pd.notna(row['Time_Local']) else "N/A",
             "local": str(row['HomeCol']),
             "visitante": str(row['AwayCol'])
         })
@@ -89,6 +105,7 @@ def audit_data_source():
             "fecha": row['ParsedDate'].strftime('%Y-%m-%d'),
             "competicion": str(row['LeagueCol']),
             "hora": str(row['Time']) if pd.notna(row['Time']) else "N/A",
+            "hora_local": str(row['Time_Local']) if 'Time_Local' in row and pd.notna(row['Time_Local']) else "N/A",
             "local": str(row['HomeCol']),
             "visitante": str(row['AwayCol'])
         })

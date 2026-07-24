@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-07-24T15:53:36.604692+00:00",
+    "timestamp_utc": "2026-07-24T16:26:12.007530+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-07-24T15:53:27.335583+00:00",
+            "ultima_consulta_utc": "2026-07-24T16:26:09.981420+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -104,66 +104,77 @@
                 {
                     "competicion": "Liga Profesional",
                     "hora": "20:45",
+                    "hora_local": "14:45",
                     "local": "Gimnasia Mendoza",
                     "visitante": "Central Cordoba"
                 },
                 {
                     "competicion": "Liga Profesional",
                     "hora": "23:00",
+                    "hora_local": "17:00",
                     "local": "Racing Club",
                     "visitante": "Gimnasia L.P."
                 },
                 {
                     "competicion": "Liga Profesional",
                     "hora": "23:00",
+                    "hora_local": "17:00",
                     "local": "Velez Sarsfield",
                     "visitante": "Instituto"
                 },
                 {
                     "competicion": "Superliga",
                     "hora": "18:00",
+                    "hora_local": "12:00",
                     "local": "Viborg",
                     "visitante": "Odense"
                 },
                 {
                     "competicion": "Veikkausliiga",
                     "hora": "17:00",
+                    "hora_local": "11:00",
                     "local": "Jaro",
                     "visitante": "SJK"
                 },
                 {
                     "competicion": "Premier Division",
                     "hora": "20:00",
+                    "hora_local": "14:00",
                     "local": "St. Patricks",
                     "visitante": "Dundalk"
                 },
                 {
                     "competicion": "Ekstraklasa",
                     "hora": "17:00",
+                    "hora_local": "11:00",
                     "local": "Radomiak Radom",
                     "visitante": "Wieczysta Krakow"
                 },
                 {
                     "competicion": "Ekstraklasa",
                     "hora": "19:30",
+                    "hora_local": "13:30",
                     "local": "Pogon Szczecin",
                     "visitante": "Legia"
                 },
                 {
                     "competicion": "Superliga",
                     "hora": "16:30",
+                    "hora_local": "10:30",
                     "local": "UTA Arad",
                     "visitante": "Otelul"
                 },
                 {
                     "competicion": "Superliga",
                     "hora": "19:30",
+                    "hora_local": "13:30",
                     "local": "FC Arges",
                     "visitante": "Petrolul"
                 },
                 {
                     "competicion": "Allsvenskan",
                     "hora": "18:00",
+                    "hora_local": "12:00",
                     "local": "Vasteras SK",
                     "visitante": "Orgryte"
                 }
@@ -174,6 +185,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga Profesional",
                 "hora": "01:15",
+                "hora_local": "19:15",
                 "local": "Huracan",
                 "visitante": "Banfield"
             },
@@ -181,6 +193,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga Profesional",
                 "hora": "01:15",
+                "hora_local": "19:15",
                 "local": "Platense",
                 "visitante": "Union de Santa Fe"
             },
@@ -188,6 +201,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga MX",
                 "hora": "04:00",
+                "hora_local": "22:00",
                 "local": "Atlante",
                 "visitante": "Club America"
             },
@@ -195,6 +209,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga MX",
                 "hora": "04:00",
+                "hora_local": "22:00",
                 "local": "Club Tijuana",
                 "visitante": "Club Leon"
             },
@@ -202,6 +217,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "10:30",
+                "hora_local": "04:30",
                 "local": "Qingdao Hainiu",
                 "visitante": "Tianjin Jinmen Tiger"
             },
@@ -209,6 +225,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "12:35",
+                "hora_local": "06:35",
                 "local": "Liaoning Tieren",
                 "visitante": "Qingdao West Coast"
             },
@@ -216,6 +233,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "12:35",
+                "hora_local": "06:35",
                 "local": "Shanghai Port",
                 "visitante": "Shanghai Shenhua"
             },
@@ -223,6 +241,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Wuhan Three Towns",
                 "visitante": "Chongqing Tonglianglong"
             },
@@ -230,6 +249,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Ekstraklasa",
                 "hora": "13:45",
+                "hora_local": "07:45",
                 "local": "Jagiellonia",
                 "visitante": "Korona Kielce"
             },
@@ -237,6 +257,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Allsvenskan",
                 "hora": "14:00",
+                "hora_local": "08:00",
                 "local": "Degerfors",
                 "visitante": "Djurgarden"
             },
@@ -244,6 +265,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Veikkausliiga",
                 "hora": "14:30",
+                "hora_local": "08:30",
                 "local": "Mariehamn",
                 "visitante": "AC Oulu"
             },
@@ -251,6 +273,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Veikkausliiga",
                 "hora": "15:00",
+                "hora_local": "09:00",
                 "local": "KuPS",
                 "visitante": "VPS"
             },
@@ -258,6 +281,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Eliteserien",
                 "hora": "15:00",
+                "hora_local": "09:00",
                 "local": "Kristiansund",
                 "visitante": "Start"
             },
@@ -265,6 +289,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Superliga",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "Farul Constanta",
                 "visitante": "Corvinul"
             },
@@ -272,6 +297,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Ekstraklasa",
                 "hora": "16:30",
+                "hora_local": "10:30",
                 "local": "Gornik Zabrze",
                 "visitante": "Slask Wroclaw"
             },
@@ -279,6 +305,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Allsvenskan",
                 "hora": "16:30",
+                "hora_local": "10:30",
                 "local": "Kalmar",
                 "visitante": "Mjallby"
             },
@@ -286,6 +313,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Superliga",
                 "hora": "17:00",
+                "hora_local": "11:00",
                 "local": "Aarhus",
                 "visitante": "Brondby"
             },
@@ -293,6 +321,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Premier Division",
                 "hora": "17:00",
+                "hora_local": "11:00",
                 "local": "Galway",
                 "visitante": "Waterford"
             },
@@ -300,6 +329,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "17:00",
+                "hora_local": "11:00",
                 "local": "Lausanne",
                 "visitante": "Grasshoppers"
             },
@@ -307,6 +337,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "17:00",
+                "hora_local": "11:00",
                 "local": "Servette",
                 "visitante": "Basel"
             },
@@ -314,6 +345,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Superliga",
                 "hora": "18:30",
+                "hora_local": "12:30",
                 "local": "Dinamo Bucuresti",
                 "visitante": "Univ. Craiova"
             },
@@ -321,6 +353,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga Profesional",
                 "hora": "18:45",
+                "hora_local": "12:45",
                 "local": "Estudiantes Rio Cuarto",
                 "visitante": "Tigre"
             },
@@ -328,6 +361,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Ekstraklasa",
                 "hora": "19:15",
+                "hora_local": "13:15",
                 "local": "Lech Poznan",
                 "visitante": "Cracovia"
             },
@@ -335,6 +369,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Super League",
                 "hora": "19:30",
+                "hora_local": "13:30",
                 "local": "Luzern",
                 "visitante": "Thun"
             },
@@ -342,6 +377,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Premier Division",
                 "hora": "19:45",
+                "hora_local": "13:45",
                 "local": "Sligo Rovers",
                 "visitante": "Drogheda"
             },
@@ -349,6 +385,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga Profesional",
                 "hora": "21:00",
+                "hora_local": "15:00",
                 "local": "Newells Old Boys",
                 "visitante": "Talleres Cordoba"
             },
@@ -356,6 +393,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Serie A",
                 "hora": "22:30",
+                "hora_local": "16:30",
                 "local": "Athletico-PR",
                 "visitante": "Internacional"
             },
@@ -363,6 +401,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Serie A",
                 "hora": "22:30",
+                "hora_local": "16:30",
                 "local": "Santos",
                 "visitante": "Chapecoense-SC"
             },
@@ -370,6 +409,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "Liga Profesional",
                 "hora": "23:15",
+                "hora_local": "17:15",
                 "local": "River Plate",
                 "visitante": "Barracas Central"
             },
@@ -377,6 +417,7 @@
                 "fecha": "2026-07-25",
                 "competicion": "MLS",
                 "hora": "23:30",
+                "hora_local": "17:30",
                 "local": "New York Red Bulls",
                 "visitante": "Charlotte"
             },
@@ -384,6 +425,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga MX",
                 "hora": "00:07",
+                "hora_local": "18:07",
                 "local": "Guadalajara Chivas",
                 "visitante": "Juarez"
             },
@@ -391,6 +433,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:15",
+                "hora_local": "18:15",
                 "local": "Columbus Crew",
                 "visitante": "FC Cincinnati"
             },
@@ -398,6 +441,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "Vasco",
                 "visitante": "Mirassol"
             },
@@ -405,6 +449,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "CF Montreal",
                 "visitante": "Inter Miami"
             },
@@ -412,6 +457,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "DC United",
                 "visitante": "Toronto FC"
             },
@@ -419,6 +465,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "New England Revolution",
                 "visitante": "Atlanta Utd"
             },
@@ -426,6 +473,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "New York City",
                 "visitante": "Chicago Fire"
             },
@@ -433,6 +481,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "Orlando City",
                 "visitante": "Nashville SC"
             },
@@ -440,6 +489,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "00:30",
+                "hora_local": "18:30",
                 "local": "Philadelphia Union",
                 "visitante": "Seattle Sounders"
             },
@@ -447,6 +497,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga Profesional",
                 "hora": "01:30",
+                "hora_local": "19:30",
                 "local": "Lanus",
                 "visitante": "San Lorenzo"
             },
@@ -454,6 +505,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "01:30",
+                "hora_local": "19:30",
                 "local": "Houston Dynamo",
                 "visitante": "Austin FC"
             },
@@ -461,6 +513,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "01:30",
+                "hora_local": "19:30",
                 "local": "Minnesota United",
                 "visitante": "Vancouver Whitecaps"
             },
@@ -468,6 +521,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "01:30",
+                "hora_local": "19:30",
                 "local": "St. Louis City",
                 "visitante": "Colorado Rapids"
             },
@@ -475,6 +529,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "02:30",
+                "hora_local": "20:30",
                 "local": "San Diego FC",
                 "visitante": "FC Dallas"
             },
@@ -482,6 +537,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "03:30",
+                "hora_local": "21:30",
                 "local": "Los Angeles FC",
                 "visitante": "Sporting Kansas City"
             },
@@ -489,6 +545,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "03:30",
+                "hora_local": "21:30",
                 "local": "Portland Timbers",
                 "visitante": "Real Salt Lake"
             },
@@ -496,6 +553,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "MLS",
                 "hora": "03:30",
+                "hora_local": "21:30",
                 "local": "San Jose Earthquakes",
                 "visitante": "Los Angeles Galaxy"
             },
@@ -503,6 +561,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga MX",
                 "hora": "04:00",
+                "hora_local": "22:00",
                 "local": "Santos Laguna",
                 "visitante": "Atlas"
             },
@@ -510,6 +569,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga MX",
                 "hora": "04:00",
+                "hora_local": "22:00",
                 "local": "Tigres UANL",
                 "visitante": "Atl. San Luis"
             },
@@ -517,6 +577,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "12:00",
+                "hora_local": "06:00",
                 "local": "Yunnan Yukun",
                 "visitante": "Shenzhen Xinpengcheng"
             },
@@ -524,6 +585,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "12:35",
+                "hora_local": "06:35",
                 "local": "Chengdu Rongcheng",
                 "visitante": "Beijing Guoan"
             },
@@ -531,6 +593,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "12:35",
+                "hora_local": "06:35",
                 "local": "Shandong Taishan",
                 "visitante": "Henan Songshan Longmen"
             },
@@ -538,6 +601,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Zhejiang Professional",
                 "visitante": "Dalian Yingbo"
             },
@@ -545,6 +609,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Superliga",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Sonderjyske",
                 "visitante": "Midtjylland"
             },
@@ -552,6 +617,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Veikkausliiga",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Ilves",
                 "visitante": "Lahti"
             },
@@ -559,6 +625,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Veikkausliiga",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Inter Turku",
                 "visitante": "Gnistan"
             },
@@ -566,6 +633,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Allsvenskan",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Brommapojkarna",
                 "visitante": "Hammarby"
             },
@@ -573,6 +641,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Allsvenskan",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Sirius",
                 "visitante": "Goteborg"
             },
@@ -580,6 +649,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "13:00",
+                "hora_local": "07:00",
                 "local": "Young Boys",
                 "visitante": "Sion"
             },
@@ -587,6 +657,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Eliteserien",
                 "hora": "13:30",
+                "hora_local": "07:30",
                 "local": "Brann",
                 "visitante": "Valerenga"
             },
@@ -594,6 +665,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Ekstraklasa",
                 "hora": "13:45",
+                "hora_local": "07:45",
                 "local": "Rakow",
                 "visitante": "Wisla Plock"
             },
@@ -601,6 +673,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Superliga",
                 "hora": "15:00",
+                "hora_local": "09:00",
                 "local": "FC Copenhagen",
                 "visitante": "Lyngby"
             },
@@ -608,6 +681,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Veikkausliiga",
                 "hora": "15:00",
+                "hora_local": "09:00",
                 "local": "HJK",
                 "visitante": "TPS"
             },
@@ -615,6 +689,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Superliga",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "Sepsi Sf. Gheorghe",
                 "visitante": "U. Cluj"
             },
@@ -622,6 +697,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Allsvenskan",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "GAIS",
                 "visitante": "Halmstad"
             },
@@ -629,6 +705,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Allsvenskan",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "Malmo FF",
                 "visitante": "Elfsborg"
             },
@@ -636,6 +713,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "Lugano",
                 "visitante": "Vaduz"
             },
@@ -643,6 +721,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Super League",
                 "hora": "15:30",
+                "hora_local": "09:30",
                 "local": "St. Gallen",
                 "visitante": "Zurich"
             },
@@ -650,6 +729,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Eliteserien",
                 "hora": "16:00",
+                "hora_local": "10:00",
                 "local": "KFUM Oslo",
                 "visitante": "Molde"
             },
@@ -657,6 +737,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Eliteserien",
                 "hora": "16:00",
+                "hora_local": "10:00",
                 "local": "Sandefjord",
                 "visitante": "Bodo/Glimt"
             },
@@ -664,6 +745,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Eliteserien",
                 "hora": "16:00",
+                "hora_local": "10:00",
                 "local": "Sarpsborg 08",
                 "visitante": "HamKam"
             },
@@ -671,6 +753,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Ekstraklasa",
                 "hora": "16:30",
+                "hora_local": "10:30",
                 "local": "Widzew Lodz",
                 "visitante": "Motor Lublin"
             },
@@ -678,6 +761,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Superliga",
                 "hora": "17:00",
+                "hora_local": "11:00",
                 "local": "Horsens",
                 "visitante": "Nordsjaelland"
             },
@@ -685,6 +769,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Eliteserien",
                 "hora": "18:15",
+                "hora_local": "12:15",
                 "local": "Aalesund",
                 "visitante": "Viking"
             },
@@ -692,6 +777,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Superliga",
                 "hora": "18:30",
+                "hora_local": "12:30",
                 "local": "Csikszereda M. Ciuc",
                 "visitante": "FCSB"
             },
@@ -699,6 +785,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga Profesional",
                 "hora": "19:00",
+                "hora_local": "13:00",
                 "local": "Atl. Tucuman",
                 "visitante": "Ind. Rivadavia"
             },
@@ -706,6 +793,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Ekstraklasa",
                 "hora": "19:15",
+                "hora_local": "13:15",
                 "local": "Wisla",
                 "visitante": "GKS Katowice"
             },
@@ -713,6 +801,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "20:00",
+                "hora_local": "14:00",
                 "local": "Bahia",
                 "visitante": "Corinthians"
             },
@@ -720,6 +809,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "20:00",
+                "hora_local": "14:00",
                 "local": "Cruzeiro",
                 "visitante": "Botafogo RJ"
             },
@@ -727,6 +817,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga Profesional",
                 "hora": "21:15",
+                "hora_local": "15:15",
                 "local": "Estudiantes L.P.",
                 "visitante": "Independiente"
             },
@@ -734,6 +825,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "22:30",
+                "hora_local": "16:30",
                 "local": "Bragantino",
                 "visitante": "Coritiba"
             },
@@ -741,6 +833,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "22:30",
+                "hora_local": "16:30",
                 "local": "Flamengo RJ",
                 "visitante": "Sao Paulo"
             },
@@ -748,6 +841,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "22:30",
+                "hora_local": "16:30",
                 "local": "Gremio",
                 "visitante": "Fluminense"
             },
@@ -755,6 +849,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Liga Profesional",
                 "hora": "23:30",
+                "hora_local": "17:30",
                 "local": "Dep. Riestra",
                 "visitante": "Boca Juniors"
             },
@@ -762,6 +857,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "23:30",
+                "hora_local": "17:30",
                 "local": "Palmeiras",
                 "visitante": "Atletico-MG"
             },
@@ -769,6 +865,7 @@
                 "fecha": "2026-07-26",
                 "competicion": "Serie A",
                 "hora": "23:30",
+                "hora_local": "17:30",
                 "local": "Remo",
                 "visitante": "Vitoria"
             }
