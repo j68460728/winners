@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winners - Dashboard Operativo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #ffffff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        .block {
+            background: #1e1e1e;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        .block.fin { border-left-color: #2196F3; }
+        .block.op { border-left-color: #FFC107; }
+        .block.alert { border-left-color: #F44336; }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #333;
+            padding: 8px 0;
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .label { font-weight: bold; color: #aaaaaa; }
+        .value { font-family: monospace; font-size: 1.1em; color: #ffffff; }
+        .update-time {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Winners v1.0.0</h1>
+        
+        <!-- ESTADO DEL EXPERIMENTO -->
+        <div class="block">
+            <h2>1. Estado del Experimento</h2>
+            <div class="stat-row">
+                <span class="label">Evidence Age:</span>
+                <span class="value">0 días</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Versiones de Algoritmo:</span>
+                <span class="value"></span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Ligas Monitorizadas:</span>
+                <span class="value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Integridad Estructural:</span>
+                <span class="value">ESTADO SALUDABLE: No hay anomalías estructurales.</span>
+            </div>
+        </div>
+
+        <!-- ESTADO OPERATIVO -->
+        <div class="block op">
+            <h2>2. Estado Operativo</h2>
+            <div class="stat-row">
+                <span class="label">Expedientes PENDING:</span>
+                <span class="value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Expedientes SETTLED:</span>
+                <span class="value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Expedientes INVALID:</span>
+                <span class="value">0</span>
+            </div>
+            <br>
+            <div class="stat-row">
+                <span class="label">Última Observación (Fecha):</span>
+                <span class="value">2026-07-24T06:11:41.986022+00:00</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Última Observación (Estado):</span>
+                <span class="value">Observación completada correctamente.</span>
+            </div>
+        </div>
+
+        <!-- ESTADO FINANCIERO -->
+        <div class="block fin">
+            <h2>3. Estado Financiero</h2>
+            <div class="stat-row">
+                <span class="label">Apuestas Totales:</span>
+                <span class="value">0</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Bankroll (Beneficio):</span>
+                <span class="value">+0.00 uds</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Yield (ROI):</span>
+                <span class="value">+0.00%</span>
+            </div>
+            <div class="stat-row">
+                <span class="label">Max Drawdown:</span>
+                <span class="value">0.00 uds</span>
+            </div>
+        </div>
+        
+        <div class="update-time">
+            Página generada estáticamente el: 2026-07-24T14:30:45.802167+00:00
+        </div>
+    </div>
+</body>
+</html>

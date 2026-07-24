@@ -110,13 +110,16 @@ def build_dashboard():
             
     print(f"\n--- CALIDAD DEL EXPERIMENTO ---")
     if not alerts:
-        print("ESTADO SALUDABLE: No hay anomalías estructurales.")
+        integrity_status = "ESTADO SALUDABLE: No hay anomalías estructurales."
+        print(integrity_status)
     else:
+        integrity_status = "ALERTAS ACTIVAS"
         for alert in alerts:
             print(alert)
             
     # Última observación
     last_run_path = os.path.join(PROSPECTIVE_DIR, "last_run.json")
+    last_run = {}
     if os.path.exists(last_run_path):
         with open(last_run_path, "r") as f:
             last_run = json.load(f)
@@ -129,6 +132,38 @@ def build_dashboard():
             
     log_event("DASHBOARD_RUN", "SUCCESS")
     print("\n===================================================================")
+    
+    # Exportar estado oficial como JSON
+    dashboard_state = {
+        "timestamp_utc": now_utc.isoformat(),
+        "estado_experimento": {
+            "evidence_age_days": evidence_age,
+            "versiones_algoritmo": list(algo_versions),
+            "hashes_config": list(config_hashes),
+            "ligas_monitorizadas": len(leagues_seen)
+        },
+        "estado_operativo": {
+            "predicciones_pendientes": status_counts.get('PENDING', 0),
+            "predicciones_liquidadas": status_counts.get('SETTLED', 0),
+            "predicciones_invalidas": status_counts.get('INVALID', 0),
+            "ultima_observacion": last_run
+        },
+        "estado_financiero": {
+            "apuestas_totales": total_bets,
+            "beneficio_uds": round(total_profit, 2),
+            "yield_pct": round(yield_pct, 2),
+            "max_drawdown_uds": round(max_dd, 2)
+        },
+        "integridad": {
+            "status": "PASS" if not alerts else "FAIL",
+            "message": integrity_status,
+            "alerts": alerts
+        }
+    }
+    
+    os.makedirs("docs", exist_ok=True)
+    with open("docs/dashboard_state.json", "w") as f:
+        json.dump(dashboard_state, f, indent=4)
 
 if __name__ == "__main__":
     build_dashboard()

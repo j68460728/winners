@@ -1,0 +1,54 @@
+name: Winners Autonomous Observability
+
+on:
+  workflow_dispatch: # Permite ejecución manual
+  # schedule:
+  #   - cron: '0 9 * * *' # Diariamente a las 09:00 UTC (Se activará tras validación)
+
+permissions:
+  contents: write # Requerido para hacer push al repositorio
+
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Integrity Health Check
+        run: python src/health_check.py
+
+      - name: Run Prospective Pipeline (Ingestion)
+        run: python src/prospective_pipeline.py
+
+      - name: Build Structured Dashboard
+        run: python src/dashboard.py
+
+      - name: Generate Static HTML
+        run: python src/generate_html.py
+
+      - name: Commit and Push (Conditional)
+        run: |
+          git config --global user.name "Winners Bot"
+          git config --global user.email "bot@winners.local"
+          
+          git add data/prospective/ docs/
+          
+          # Verificar si hay cambios en el stage
+          if git diff --staged --quiet; then
+            echo "No se detectaron mutaciones en la evidencia. No se realizará commit."
+            exit 0
+          else
+            echo "Mutación detectada. Registrando evidencia."
+            git commit -m "Auto: Actualización de evidencia prospectiva y dashboard"
+            git push
+          fi
