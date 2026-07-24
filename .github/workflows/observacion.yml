@@ -2,8 +2,8 @@ name: Winners Autonomous Observability
 
 on:
   workflow_dispatch: # Permite ejecución manual
-  # schedule:
-  #   - cron: '0 9 * * *' # Diariamente a las 09:00 UTC (Se activará tras validación)
+  schedule:
+    - cron: '0 9 * * *' # Diariamente a las 09:00 UTC
 
 permissions:
   contents: write # Requerido para hacer push al repositorio
