@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "timestamp_utc": "2026-07-24T04:29:36.571574Z",
+        "algo_version": "1.0.0-PROSPECTIVE",
+        "config_hash": "18d302e8c1241200b6afde45d5c4ad3baf605022065544c3b2dccfc49d1d1c97",
+        "frozen_params": {
+            "Premier": {
+                "code": "E0",
+                "window": 5,
+                "top_pct": 0.2,
+                "bottom_pct": 0.3
+            },
+            "2.Bundesliga": {
+                "code": "D2",
+                "window": 5,
+                "top_pct": 0.2,
+                "bottom_pct": 0.3
+            }
+        },
+        "data_provider": "football-data.co.uk",
+        "dataset_version": "fixtures.csv (Live)",
+        "total_matches_analyzed": 0,
+        "total_matches_selected": 0
+    },
+    "predictions": []
+}

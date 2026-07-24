@@ -1,0 +1,30 @@
+{
+  "identification": {
+    "official_name": "",
+    "country": "",
+    "confederation": "",
+    "division": 1
+  },
+  "competition": {
+    "number_of_teams": 0,
+    "format": "Todos contra todos",
+    "total_matchdays": 0,
+    "relegation_system": "",
+    "international_qualification_system": ""
+  },
+  "calendar": {
+    "start_month": "",
+    "end_month": "",
+    "usual_match_days": []
+  },
+  "history": {
+    "champions_last_10_years": [],
+    "most_championships": [],
+    "distinct_champions_last_10_years": 0
+  },
+  "competitiveness": {
+    "frequent_top_teams": [],
+    "frequent_bottom_teams": []
+  },
+  "objective_observations": []
+}
