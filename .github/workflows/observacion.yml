@@ -1,54 +1,41 @@
-name: Winners Autonomous Observability
+name: Observatorio Winners
 
 on:
-  workflow_dispatch: # Permite ejecución manual
   schedule:
-    - cron: '0 9 * * *' # Diariamente a las 09:00 UTC
-
-permissions:
-  contents: write # Requerido para hacer push al repositorio
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
-  observe:
+  observar:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-      - name: Checkout repository
+      - name: Checkout repositorio
         uses: actions/checkout@v4
 
-      - name: Setup Python 3.12
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pandas requests
 
-      - name: Run Integrity Health Check
-        run: python src/health_check.py
-
-      - name: Run Prospective Pipeline (Ingestion)
-        run: python src/prospective_pipeline.py
-
-      - name: Build Structured Dashboard
+      - name: Actualizar Dashboard JSON
         run: python src/dashboard.py
 
-      - name: Generate Static HTML
+      - name: Generar HTML Estático
         run: python src/generate_html.py
 
-      - name: Commit and Push (Conditional)
+      - name: Commit y Push de Cambios
         run: |
-          git config --global user.name "Winners Bot"
-          git config --global user.email "bot@winners.local"
-          
-          git add data/prospective/ docs/
-          
-          # Verificar si hay cambios en el stage
-          if git diff --staged --quiet; then
-            echo "No se detectaron mutaciones en la evidencia. No se realizará commit."
-            exit 0
-          else
-            echo "Mutación detectada. Registrando evidencia."
-            git commit -m "Auto: Actualización de evidencia prospectiva y dashboard"
-            git push
-          fi
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/dashboard_state.json docs/index.html
+          git commit -m "docs: actualizar observatorio de datos [skip ci]" || echo "No hay cambios para commitear"
+          git push

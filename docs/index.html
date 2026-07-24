@@ -3,127 +3,890 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winners - Dashboard Operativo</title>
+    <title>Winners - Observatorio de Datos</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 20px;
-            line-height: 1.6;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-top: 5px solid #2c3e50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h1, h2 {
-            color: #ffffff;
-            border-bottom: 1px solid #333;
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+        }
+        .section-title {
+            border-bottom: 2px solid #2c3e50;
             padding-bottom: 5px;
+            margin-top: 0;
         }
-        .block {
-            background: #1e1e1e;
-            padding: 15px 20px;
-            border-radius: 8px;
+        .metric-box {
+            display: inline-block;
+            width: 30%;
+            margin-bottom: 15px;
+            vertical-align: top;
+        }
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin-bottom: 20px;
-            border-left: 4px solid #4CAF50;
         }
-        .block.fin { border-left-color: #2196F3; }
-        .block.op { border-left-color: #FFC107; }
-        .block.alert { border-left-color: #F44336; }
-        
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #333;
-            padding: 8px 0;
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
         }
-        .stat-row:last-child { border-bottom: none; }
-        .label { font-weight: bold; color: #aaaaaa; }
-        .value { font-family: monospace; font-size: 1.1em; color: #ffffff; }
-        .update-time {
-            text-align: center;
-            font-size: 0.9em;
-            color: #888;
-            margin-top: 30px;
+        th {
+            background: #eaeaea;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: #666;
+            text-align: right;
+            margin-top: -30px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Winners v1.0.0</h1>
+        <div class="timestamp">Última actualización: 2026-07-24T15:53:36.604692+00:00</div>
         
-        <!-- ESTADO DEL EXPERIMENTO -->
-        <div class="block">
-            <h2>1. Estado del Experimento</h2>
-            <div class="stat-row">
-                <span class="label">Evidence Age:</span>
-                <span class="value">0 días</span>
+        <!-- SECCIÓN 1: ESTADO DEL EXPERIMENTO -->
+        <div class="section">
+            <h2 class="section-title">1. Estado del Experimento</h2>
+            <p><strong>Salud:</strong> <span class="pass">ESTADO SALUDABLE</span></p>
+            
+            <div class="metric-box">
+                <div>Evidence Age</div>
+                <div class="metric-value">0 días</div>
             </div>
-            <div class="stat-row">
-                <span class="label">Versiones de Algoritmo:</span>
-                <span class="value"></span>
+            <div class="metric-box">
+                <div>Apuestas Liquidadas</div>
+                <div class="metric-value">0</div>
             </div>
-            <div class="stat-row">
-                <span class="label">Ligas Monitorizadas:</span>
-                <span class="value">0</span>
+            <div class="metric-box">
+                <div>Pendientes</div>
+                <div class="metric-value">0</div>
             </div>
-            <div class="stat-row">
-                <span class="label">Integridad Estructural:</span>
-                <span class="value">ESTADO SALUDABLE: No hay anomalías estructurales.</span>
+            
+            <div class="metric-box">
+                <div>Yield (ROI)</div>
+                <div class="metric-value">0.00%</div>
             </div>
-        </div>
-
-        <!-- ESTADO OPERATIVO -->
-        <div class="block op">
-            <h2>2. Estado Operativo</h2>
-            <div class="stat-row">
-                <span class="label">Expedientes PENDING:</span>
-                <span class="value">0</span>
+            <div class="metric-box">
+                <div>Beneficio</div>
+                <div class="metric-value">0.00 uds</div>
             </div>
-            <div class="stat-row">
-                <span class="label">Expedientes SETTLED:</span>
-                <span class="value">0</span>
-            </div>
-            <div class="stat-row">
-                <span class="label">Expedientes INVALID:</span>
-                <span class="value">0</span>
-            </div>
-            <br>
-            <div class="stat-row">
-                <span class="label">Última Observación (Fecha):</span>
-                <span class="value">2026-07-24T14:34:22.177927+00:00</span>
-            </div>
-            <div class="stat-row">
-                <span class="label">Última Observación (Estado):</span>
-                <span class="value">Observación completada correctamente.</span>
-            </div>
-        </div>
-
-        <!-- ESTADO FINANCIERO -->
-        <div class="block fin">
-            <h2>3. Estado Financiero</h2>
-            <div class="stat-row">
-                <span class="label">Apuestas Totales:</span>
-                <span class="value">0</span>
-            </div>
-            <div class="stat-row">
-                <span class="label">Bankroll (Beneficio):</span>
-                <span class="value">+0.00 uds</span>
-            </div>
-            <div class="stat-row">
-                <span class="label">Yield (ROI):</span>
-                <span class="value">+0.00%</span>
-            </div>
-            <div class="stat-row">
-                <span class="label">Max Drawdown:</span>
-                <span class="value">0.00 uds</span>
+            <div class="metric-box">
+                <div>Max Drawdown</div>
+                <div class="metric-value">0.00 uds</div>
             </div>
         </div>
         
-        <div class="update-time">
-            Página generada estáticamente el: 2026-07-24T14:34:30.010384+00:00
+        <!-- SECCIÓN 2: ESTADO DE LA FUENTE -->
+        <div class="section">
+            <h2 class="section-title">2. Estado de la Fuente de Datos</h2>
+            <p><strong>Última consulta UTC:</strong> 2026-07-24T15:53:27.335583+00:00</p>
+            <table>
+                <tr>
+                    <th>Archivo Descargado</th>
+                    <th>Estado</th>
+                    <th>Registros Totales</th>
+                    <th>Última Fecha Encontrada</th>
+                </tr>
+                <tr>
+                    <td>fixtures.csv</td>
+                    <td>OK</td>
+                    <td>12</td>
+                    <td>2026-05-31</td>
+                </tr>
+                <tr>
+                    <td>new_league_fixtures.csv</td>
+                    <td>OK</td>
+                    <td>105</td>
+                    <td>2026-07-27</td>
+                </tr>
+            </table>
+            <p><strong>Total Competiciones Detectadas:</strong> 13</p>
+        </div>
+        
+        <!-- SECCIÓN 3: OBSERVACIÓN DEL DÍA -->
+        <div class="section">
+            <h2 class="section-title">3. Observación del Día (Ligas Activas)</h2>
+            <p>Ligas detectadas en el servidor, ordenadas por volumen de partidos:</p>
+            <table>
+                <tr>
+                    <th>Competición</th>
+                    <th>Total Partidos Extraídos</th>
+                </tr>
+
+                <tr>
+                    <td>MLS</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Super League</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Superliga</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>Liga Profesional</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>SP2</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>Serie A</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Ekstraklasa</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Allsvenskan</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>Liga MX</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>Eliteserien</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>Veikkausliiga</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Premier Division</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>B1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            
+            <h3>Partidos del Día (HOY)</h3>
+
+            <table>
+                <tr>
+                    <th>Competición</th>
+                    <th>Hora</th>
+                    <th>Local</th>
+                    <th>Visitante</th>
+                </tr>
+                <tr>
+                    <td>Liga Profesional</td>
+                    <td>20:45</td>
+                    <td>Gimnasia Mendoza</td>
+                    <td>Central Cordoba</td>
+                </tr>
+                <tr>
+                    <td>Liga Profesional</td>
+                    <td>23:00</td>
+                    <td>Racing Club</td>
+                    <td>Gimnasia L.P.</td>
+                </tr>
+                <tr>
+                    <td>Liga Profesional</td>
+                    <td>23:00</td>
+                    <td>Velez Sarsfield</td>
+                    <td>Instituto</td>
+                </tr>
+                <tr>
+                    <td>Superliga</td>
+                    <td>18:00</td>
+                    <td>Viborg</td>
+                    <td>Odense</td>
+                </tr>
+                <tr>
+                    <td>Veikkausliiga</td>
+                    <td>17:00</td>
+                    <td>Jaro</td>
+                    <td>SJK</td>
+                </tr>
+                <tr>
+                    <td>Premier Division</td>
+                    <td>20:00</td>
+                    <td>St. Patricks</td>
+                    <td>Dundalk</td>
+                </tr>
+                <tr>
+                    <td>Ekstraklasa</td>
+                    <td>17:00</td>
+                    <td>Radomiak Radom</td>
+                    <td>Wieczysta Krakow</td>
+                </tr>
+                <tr>
+                    <td>Ekstraklasa</td>
+                    <td>19:30</td>
+                    <td>Pogon Szczecin</td>
+                    <td>Legia</td>
+                </tr>
+                <tr>
+                    <td>Superliga</td>
+                    <td>16:30</td>
+                    <td>UTA Arad</td>
+                    <td>Otelul</td>
+                </tr>
+                <tr>
+                    <td>Superliga</td>
+                    <td>19:30</td>
+                    <td>FC Arges</td>
+                    <td>Petrolul</td>
+                </tr>
+                <tr>
+                    <td>Allsvenskan</td>
+                    <td>18:00</td>
+                    <td>Vasteras SK</td>
+                    <td>Orgryte</td>
+                </tr></table>
+        </div>
+        
+        <!-- SECCIÓN 4: PRÓXIMOS PARTIDOS -->
+        <div class="section">
+            <h2 class="section-title">4. Próximos Partidos (48 horas)</h2>
+
+            <table>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Competición</th>
+                    <th>Hora</th>
+                    <th>Local</th>
+                    <th>Visitante</th>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga Profesional</td>
+                    <td>01:15</td>
+                    <td>Huracan</td>
+                    <td>Banfield</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga Profesional</td>
+                    <td>01:15</td>
+                    <td>Platense</td>
+                    <td>Union de Santa Fe</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga MX</td>
+                    <td>04:00</td>
+                    <td>Atlante</td>
+                    <td>Club America</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga MX</td>
+                    <td>04:00</td>
+                    <td>Club Tijuana</td>
+                    <td>Club Leon</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>10:30</td>
+                    <td>Qingdao Hainiu</td>
+                    <td>Tianjin Jinmen Tiger</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>12:35</td>
+                    <td>Liaoning Tieren</td>
+                    <td>Qingdao West Coast</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>12:35</td>
+                    <td>Shanghai Port</td>
+                    <td>Shanghai Shenhua</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>13:00</td>
+                    <td>Wuhan Three Towns</td>
+                    <td>Chongqing Tonglianglong</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Ekstraklasa</td>
+                    <td>13:45</td>
+                    <td>Jagiellonia</td>
+                    <td>Korona Kielce</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Allsvenskan</td>
+                    <td>14:00</td>
+                    <td>Degerfors</td>
+                    <td>Djurgarden</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Veikkausliiga</td>
+                    <td>14:30</td>
+                    <td>Mariehamn</td>
+                    <td>AC Oulu</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Veikkausliiga</td>
+                    <td>15:00</td>
+                    <td>KuPS</td>
+                    <td>VPS</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Eliteserien</td>
+                    <td>15:00</td>
+                    <td>Kristiansund</td>
+                    <td>Start</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Superliga</td>
+                    <td>15:30</td>
+                    <td>Farul Constanta</td>
+                    <td>Corvinul</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Ekstraklasa</td>
+                    <td>16:30</td>
+                    <td>Gornik Zabrze</td>
+                    <td>Slask Wroclaw</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Allsvenskan</td>
+                    <td>16:30</td>
+                    <td>Kalmar</td>
+                    <td>Mjallby</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Superliga</td>
+                    <td>17:00</td>
+                    <td>Aarhus</td>
+                    <td>Brondby</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Premier Division</td>
+                    <td>17:00</td>
+                    <td>Galway</td>
+                    <td>Waterford</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>17:00</td>
+                    <td>Lausanne</td>
+                    <td>Grasshoppers</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>17:00</td>
+                    <td>Servette</td>
+                    <td>Basel</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Superliga</td>
+                    <td>18:30</td>
+                    <td>Dinamo Bucuresti</td>
+                    <td>Univ. Craiova</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga Profesional</td>
+                    <td>18:45</td>
+                    <td>Estudiantes Rio Cuarto</td>
+                    <td>Tigre</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Ekstraklasa</td>
+                    <td>19:15</td>
+                    <td>Lech Poznan</td>
+                    <td>Cracovia</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Super League</td>
+                    <td>19:30</td>
+                    <td>Luzern</td>
+                    <td>Thun</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Premier Division</td>
+                    <td>19:45</td>
+                    <td>Sligo Rovers</td>
+                    <td>Drogheda</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga Profesional</td>
+                    <td>21:00</td>
+                    <td>Newells Old Boys</td>
+                    <td>Talleres Cordoba</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Serie A</td>
+                    <td>22:30</td>
+                    <td>Athletico-PR</td>
+                    <td>Internacional</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Serie A</td>
+                    <td>22:30</td>
+                    <td>Santos</td>
+                    <td>Chapecoense-SC</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>Liga Profesional</td>
+                    <td>23:15</td>
+                    <td>River Plate</td>
+                    <td>Barracas Central</td>
+                </tr>
+                <tr>
+                    <td>2026-07-25</td>
+                    <td>MLS</td>
+                    <td>23:30</td>
+                    <td>New York Red Bulls</td>
+                    <td>Charlotte</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga MX</td>
+                    <td>00:07</td>
+                    <td>Guadalajara Chivas</td>
+                    <td>Juarez</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:15</td>
+                    <td>Columbus Crew</td>
+                    <td>FC Cincinnati</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>00:30</td>
+                    <td>Vasco</td>
+                    <td>Mirassol</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>CF Montreal</td>
+                    <td>Inter Miami</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>DC United</td>
+                    <td>Toronto FC</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>New England Revolution</td>
+                    <td>Atlanta Utd</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>New York City</td>
+                    <td>Chicago Fire</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>Orlando City</td>
+                    <td>Nashville SC</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>00:30</td>
+                    <td>Philadelphia Union</td>
+                    <td>Seattle Sounders</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga Profesional</td>
+                    <td>01:30</td>
+                    <td>Lanus</td>
+                    <td>San Lorenzo</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>01:30</td>
+                    <td>Houston Dynamo</td>
+                    <td>Austin FC</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>01:30</td>
+                    <td>Minnesota United</td>
+                    <td>Vancouver Whitecaps</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>01:30</td>
+                    <td>St. Louis City</td>
+                    <td>Colorado Rapids</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>02:30</td>
+                    <td>San Diego FC</td>
+                    <td>FC Dallas</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>03:30</td>
+                    <td>Los Angeles FC</td>
+                    <td>Sporting Kansas City</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>03:30</td>
+                    <td>Portland Timbers</td>
+                    <td>Real Salt Lake</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>MLS</td>
+                    <td>03:30</td>
+                    <td>San Jose Earthquakes</td>
+                    <td>Los Angeles Galaxy</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga MX</td>
+                    <td>04:00</td>
+                    <td>Santos Laguna</td>
+                    <td>Atlas</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga MX</td>
+                    <td>04:00</td>
+                    <td>Tigres UANL</td>
+                    <td>Atl. San Luis</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>12:00</td>
+                    <td>Yunnan Yukun</td>
+                    <td>Shenzhen Xinpengcheng</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>12:35</td>
+                    <td>Chengdu Rongcheng</td>
+                    <td>Beijing Guoan</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>12:35</td>
+                    <td>Shandong Taishan</td>
+                    <td>Henan Songshan Longmen</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>13:00</td>
+                    <td>Zhejiang Professional</td>
+                    <td>Dalian Yingbo</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Superliga</td>
+                    <td>13:00</td>
+                    <td>Sonderjyske</td>
+                    <td>Midtjylland</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Veikkausliiga</td>
+                    <td>13:00</td>
+                    <td>Ilves</td>
+                    <td>Lahti</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Veikkausliiga</td>
+                    <td>13:00</td>
+                    <td>Inter Turku</td>
+                    <td>Gnistan</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Allsvenskan</td>
+                    <td>13:00</td>
+                    <td>Brommapojkarna</td>
+                    <td>Hammarby</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Allsvenskan</td>
+                    <td>13:00</td>
+                    <td>Sirius</td>
+                    <td>Goteborg</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>13:00</td>
+                    <td>Young Boys</td>
+                    <td>Sion</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Eliteserien</td>
+                    <td>13:30</td>
+                    <td>Brann</td>
+                    <td>Valerenga</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Ekstraklasa</td>
+                    <td>13:45</td>
+                    <td>Rakow</td>
+                    <td>Wisla Plock</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Superliga</td>
+                    <td>15:00</td>
+                    <td>FC Copenhagen</td>
+                    <td>Lyngby</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Veikkausliiga</td>
+                    <td>15:00</td>
+                    <td>HJK</td>
+                    <td>TPS</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Superliga</td>
+                    <td>15:30</td>
+                    <td>Sepsi Sf. Gheorghe</td>
+                    <td>U. Cluj</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Allsvenskan</td>
+                    <td>15:30</td>
+                    <td>GAIS</td>
+                    <td>Halmstad</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Allsvenskan</td>
+                    <td>15:30</td>
+                    <td>Malmo FF</td>
+                    <td>Elfsborg</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>15:30</td>
+                    <td>Lugano</td>
+                    <td>Vaduz</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Super League</td>
+                    <td>15:30</td>
+                    <td>St. Gallen</td>
+                    <td>Zurich</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Eliteserien</td>
+                    <td>16:00</td>
+                    <td>KFUM Oslo</td>
+                    <td>Molde</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Eliteserien</td>
+                    <td>16:00</td>
+                    <td>Sandefjord</td>
+                    <td>Bodo/Glimt</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Eliteserien</td>
+                    <td>16:00</td>
+                    <td>Sarpsborg 08</td>
+                    <td>HamKam</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Ekstraklasa</td>
+                    <td>16:30</td>
+                    <td>Widzew Lodz</td>
+                    <td>Motor Lublin</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Superliga</td>
+                    <td>17:00</td>
+                    <td>Horsens</td>
+                    <td>Nordsjaelland</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Eliteserien</td>
+                    <td>18:15</td>
+                    <td>Aalesund</td>
+                    <td>Viking</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Superliga</td>
+                    <td>18:30</td>
+                    <td>Csikszereda M. Ciuc</td>
+                    <td>FCSB</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga Profesional</td>
+                    <td>19:00</td>
+                    <td>Atl. Tucuman</td>
+                    <td>Ind. Rivadavia</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Ekstraklasa</td>
+                    <td>19:15</td>
+                    <td>Wisla</td>
+                    <td>GKS Katowice</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>20:00</td>
+                    <td>Bahia</td>
+                    <td>Corinthians</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>20:00</td>
+                    <td>Cruzeiro</td>
+                    <td>Botafogo RJ</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga Profesional</td>
+                    <td>21:15</td>
+                    <td>Estudiantes L.P.</td>
+                    <td>Independiente</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>22:30</td>
+                    <td>Bragantino</td>
+                    <td>Coritiba</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>22:30</td>
+                    <td>Flamengo RJ</td>
+                    <td>Sao Paulo</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>22:30</td>
+                    <td>Gremio</td>
+                    <td>Fluminense</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Liga Profesional</td>
+                    <td>23:30</td>
+                    <td>Dep. Riestra</td>
+                    <td>Boca Juniors</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>23:30</td>
+                    <td>Palmeiras</td>
+                    <td>Atletico-MG</td>
+                </tr>
+                <tr>
+                    <td>2026-07-26</td>
+                    <td>Serie A</td>
+                    <td>23:30</td>
+                    <td>Remo</td>
+                    <td>Vitoria</td>
+                </tr></table>
         </div>
     </div>
 </body>
