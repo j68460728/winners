@@ -36,6 +36,7 @@ LEAGUE_STYLES = {
     "Mexico - Liga MX": {"name": "Liga MX", "flag": "🇲🇽", "color": "#006847", "country": "México"},
     "Norway - Eliteserien": {"name": "Eliteserien", "flag": "🇳🇴", "color": "#ef2b2d", "country": "Noruega"},
     "Poland - Ekstraklasa": {"name": "Ekstraklasa", "flag": "🇵🇱", "color": "#dc143c", "country": "Polonia"},
+    "Romania - Superliga": {"name": "Superliga", "flag": "🇷🇴", "color": "#fce100", "country": "Rumania"},
     "Sweden - Allsvenskan": {"name": "Allsvenskan", "flag": "🇸🇪", "color": "#006aa7", "country": "Suecia"},
     "USA - MLS": {"name": "MLS", "flag": "🇺🇸", "color": "#001f5b", "country": "Estados Unidos"},
     "Japan - J-League": {"name": "J-League", "flag": "🇯🇵", "color": "#bc002d", "country": "Japón"},
@@ -123,10 +124,14 @@ def sync_logos(active_teams):
             shutil.copy2(available_logos[team], dest_path)
             continue
             
-        # Intentar coincidencia parcial (fuzzy)
-        matches = difflib.get_close_matches(team, logo_names, n=1, cutoff=0.6)
+        # Intentar coincidencia parcial (fuzzy) case-insensitive
+        team_lower = team.lower()
+        logo_names_lower = [n.lower() for n in logo_names]
+        matches = difflib.get_close_matches(team_lower, logo_names_lower, n=1, cutoff=0.6)
+        
         if matches:
-            best_match = matches[0]
+            best_match_lower = matches[0]
+            best_match = next(n for n in logo_names if n.lower() == best_match_lower)
             mapping[team] = available_logos[best_match]
             mapping_updated = True
             safe_team = get_safe_filename(team)
@@ -572,12 +577,17 @@ def generate_html():
         html += f"""
                         <tr>
                             <td>
-                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
-                                    <span class="league-flag">{l_style['flag']}</span>
-                                    <span class="league-name">{l_style['name']}</span>
-                                </span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <img src="assets/leagues/{get_safe_filename(l_code)}.png" alt=" " onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>';" style="height: 20px; width: auto;">
+                                    <span style="font-weight: 500;">{l_style['name']}</span>
+                                </div>
                             </td>
-                            <td><span style="color: var(--text-muted);">{l_style['country']}</span></td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span>{l_style['flag']}</span>
+                                    <span style="color: var(--text-color);">{l_style['country']}</span>
+                                </div>
+                            </td>
                             <td>{liga.get("partidos")}</td>
                         </tr>"""
                         
@@ -601,7 +611,7 @@ def generate_html():
                         <tr>
                             <th>Competición</th>
                             <th>País</th>
-                            <th>Hora Local (COL)</th>
+                            <th>Hora</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
@@ -614,12 +624,17 @@ def generate_html():
             html += f"""
                         <tr>
                             <td>
-                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
-                                    <span class="league-flag">{l_style['flag']}</span>
-                                    <span class="league-name">{l_style['name']}</span>
-                                </span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <img src="assets/leagues/{get_safe_filename(p.get('competicion'))}.png" alt=" " onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>';" style="height: 20px; width: auto;">
+                                    <span style="font-weight: 500;">{l_style['name']}</span>
+                                </div>
                             </td>
-                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">{l_style['country']}</span></td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span>{l_style['flag']}</span>
+                                    <span style="color: var(--text-color); font-size: 0.9rem;">{l_style['country']}</span>
+                                </div>
+                            </td>
                             <td><span style="color: var(--primary-blue); font-weight: 600;">{p.get("hora_local", "N/A")}</span></td>
                             <td>{local_html}</td>
                             <td>{visit_html}</td>
@@ -647,7 +662,7 @@ def generate_html():
                             <th>Fecha</th>
                             <th>Competición</th>
                             <th>País</th>
-                            <th>Hora Local (COL)</th>
+                            <th>Hora</th>
                             <th>Local</th>
                             <th>Visitante</th>
                         </tr>
@@ -661,12 +676,17 @@ def generate_html():
                         <tr>
                             <td>{p.get("fecha")}</td>
                             <td>
-                                <span class="league-badge" style="border: 1px solid {l_style['color']};">
-                                    <span class="league-flag">{l_style['flag']}</span>
-                                    <span class="league-name">{l_style['name']}</span>
-                                </span>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <img src="assets/leagues/{get_safe_filename(p.get('competicion'))}.png" alt=" " onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏆</text></svg>';" style="height: 20px; width: auto;">
+                                    <span style="font-weight: 500;">{l_style['name']}</span>
+                                </div>
                             </td>
-                            <td><span style="color: var(--text-muted); font-size: 0.9rem;">{l_style['country']}</span></td>
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span>{l_style['flag']}</span>
+                                    <span style="color: var(--text-color); font-size: 0.9rem;">{l_style['country']}</span>
+                                </div>
+                            </td>
                             <td><span style="color: var(--primary-blue); font-weight: 600;">{p.get("hora_local", "N/A")}</span></td>
                             <td>{local_html}</td>
                             <td>{visit_html}</td>
