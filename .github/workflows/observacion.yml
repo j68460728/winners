@@ -26,16 +26,31 @@ jobs:
           pip install -r requirements.txt
           pip install pandas requests
 
+      - name: Health Check
+        run: python src/health_check.py
+
+      - name: Generación Prospectiva (Pipeline)
+        run: python src/prospective_pipeline.py
+
+      - name: Liquidación Prospectiva (Settler)
+        run: python src/prospective_settler.py
+
+      - name: Actualizar Diario Acumulativo
+        run: python src/prospective_journal.py
+
       - name: Actualizar Dashboard JSON
         run: python src/dashboard.py
 
       - name: Generar HTML Estático
         run: python src/generate_html.py
 
+      - name: Auditoría de Evidencia
+        run: python src/evidence_audit.py
+
       - name: Commit y Push de Cambios
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add docs/dashboard_state.json docs/index.html
-          git commit -m "docs: actualizar observatorio de datos [skip ci]" || echo "No hay cambios para commitear"
+          git add data/prospective/ docs/
+          git commit -m "chore: recolección de evidencia prospectiva [skip ci]" || echo "No hay cambios para commitear"
           git push
