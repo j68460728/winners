@@ -6,6 +6,8 @@ import json
 import datetime
 import hashlib
 import os
+import sys
+import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -50,18 +52,30 @@ def get_hierarchy(league_code, window_size):
 def run_prospective_pipeline():
     os.makedirs(PROSPECTIVE_DIR, exist_ok=True)
     
+    now_utc = datetime.datetime.now(datetime.UTC)
+    utc_now = now_utc.isoformat()
+    date_str = now_utc.strftime("%Y%m%d")
+    snapshot_timestamp = now_utc.strftime("%Y%m%dT%H%M%SZ")
+    
+    snapshot_dir = os.path.join("data", "source_snapshots", now_utc.strftime("%Y"), now_utc.strftime("%m"))
+    os.makedirs(snapshot_dir, exist_ok=True)
+    
     print("Descargando fixtures futuros...")
     url = "https://www.football-data.co.uk/fixtures.csv"
+    snapshot_filename = f"{snapshot_timestamp}_fixtures.csv"
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib.request.urlopen(req)
-        df_fix = pd.read_csv(io.StringIO(response.read().decode('utf-8', errors='ignore')))
-    except Exception as e:
-        print(f"Error descargando fixtures: {e}")
-        return
+        raw_data = response.read()
         
-    utc_now = datetime.datetime.now(datetime.UTC).isoformat()
-    date_str = datetime.datetime.now(datetime.UTC).strftime("%Y%m%d")
+        # Guardar Snapshot
+        with open(os.path.join(snapshot_dir, snapshot_filename), 'wb') as f:
+            f.write(raw_data)
+            
+        df_fix = pd.read_csv(io.StringIO(raw_data.decode('utf-8', errors='ignore')))
+    except Exception as e:
+        print(f"Error crítico descargando fixtures: {e}")
+        sys.exit(1)
     
     odds_h = ['B365H', 'BWH', 'IWH', 'PSH', 'WHH', 'VCH', 'AvgH']
     odds_a = ['B365A', 'BWA', 'IWA', 'PSA', 'WHA', 'VCA', 'AvgA']
@@ -103,22 +117,33 @@ def run_prospective_pipeline():
                 mkt_pick = 'H' if m_odds_h <= m_odds_a else 'A'
                 mkt_odds = m_odds_h if mkt_pick == 'H' else m_odds_a
                 
-                prediction_id = f"WIN-{date_str}-{prediction_count:05d}"
+                match_date = str(match['Date'])
+                season_str = str(match.get('Season', ''))
+                id_base = f"{league}_{season_str}_{match_date}_{h_t}_{a_t}".encode('utf-8')
+                prediction_id = f"WIN-{hashlib.sha256(id_base).hexdigest()[:12].upper()}"
+                
+                filepath = os.path.join(PROSPECTIVE_DIR, f"{prediction_id}.json")
+                if os.path.exists(filepath):
+                    continue
                 
                 log_data = {
                     'prediction_id': prediction_id,
                     'status': 'PENDING',
                     'metadata': {
                         'timestamp_utc': utc_now,
-                        'algo_version': ALGO_VERSION,
+                        'winners_version': ALGO_VERSION,
                         'config_hash': get_config_hash(),
-                        'data_provider': PROVIDER,
-                        'dataset_version': DATASET_VERSION,
-                        'repo_commit': 'N/A'
+                        'github_run_id': os.environ.get('GITHUB_RUN_ID', 'local_run'),
+                        'github_sha': os.environ.get('GITHUB_SHA', 'local_run')
+                    },
+                    'source': {
+                        'provider': PROVIDER,
+                        'dataset': DATASET_VERSION,
+                        'snapshot': snapshot_filename
                     },
                     'match': {
                         'league': league,
-                        'date': str(match['Date']),
+                        'date': match_date,
                         'home_team': h_t,
                         'away_team': a_t
                     },
@@ -131,7 +156,6 @@ def run_prospective_pipeline():
                     'settlement': {}
                 }
                 
-                filepath = os.path.join(PROSPECTIVE_DIR, f"{prediction_id}.json")
                 with open(filepath, 'w') as f:
                     json.dump(log_data, f, indent=4)
                     
