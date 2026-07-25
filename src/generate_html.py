@@ -218,7 +218,7 @@ def generate_html():
             dt = dt.replace(tzinfo=datetime.timezone.utc)
         colombia_tz = datetime.timezone(datetime.timedelta(hours=-5))
         dt_local = dt.astimezone(colombia_tz)
-        timestamp_formatted = dt_local.strftime("%Y-%m-%d %H:%M:%S (Hora Local COL)")
+        timestamp_formatted = dt_local.strftime("%Y-%m-%d %H:%M:%S (Hora)")
     except Exception as e:
         timestamp_formatted = timestamp
         
