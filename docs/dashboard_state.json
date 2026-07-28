@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-07-27T09:59:24.770743+00:00",
+    "timestamp_utc": "2026-07-28T08:41:26.773275+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-07-27T09:59:10.313920+00:00",
+            "timestamp_utc": "2026-07-28T08:41:12.947516+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-07-27T09:59:23.361586+00:00",
+            "ultima_consulta_utc": "2026-07-28T08:41:25.598412+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -108,64 +108,7 @@
                     "partidos": 1
                 }
             ],
-            "partidos_hoy": [
-                {
-                    "competicion": "Denmark - Superliga",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Randers FC",
-                    "visitante": "Silkeborg"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Necaxa",
-                    "visitante": "Monterrey"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "02:06",
-                    "hora_local": "20:06",
-                    "local": "Pachuca",
-                    "visitante": "Queretaro"
-                },
-                {
-                    "competicion": "Norway - Eliteserien",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Rosenborg",
-                    "visitante": "Fredrikstad"
-                },
-                {
-                    "competicion": "Poland - Ekstraklasa",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Zaglebie",
-                    "visitante": "Piast Gliwice"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "16:30",
-                    "hora_local": "10:30",
-                    "local": "CFR Cluj",
-                    "visitante": "FC Voluntari"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "FC Botosani",
-                    "visitante": "FC Rapid Bucuresti"
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Hacken",
-                    "visitante": "AIK"
-                }
-            ]
+            "partidos_hoy": []
         },
         "proximos_partidos": []
     }
