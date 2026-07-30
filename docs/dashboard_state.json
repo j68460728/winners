@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-07-29T08:47:26.722339+00:00",
+    "timestamp_utc": "2026-07-30T08:33:55.767916+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-07-29T08:47:13.344338+00:00",
+            "timestamp_utc": "2026-07-30T08:33:46.416131+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-07-29T08:47:25.743697+00:00",
+            "ultima_consulta_utc": "2026-07-30T08:33:55.024511+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -67,104 +67,49 @@
             "partidos_hoy": [
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Argentinos Jrs",
-                    "visitante": "Estudiantes Rio Cuarto"
+                    "hora": "01:30",
+                    "hora_local": "19:30",
+                    "local": "Instituto",
+                    "visitante": "Platense"
                 },
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Rosario Central",
-                    "visitante": "Racing Club"
+                    "hora": "23:00",
+                    "hora_local": "17:00",
+                    "local": "Ind. Rivadavia",
+                    "visitante": "Huracan"
                 },
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "18:30",
-                    "hora_local": "12:30",
-                    "local": "Barracas Central",
-                    "visitante": "Aldosivi"
+                    "hora": "23:00",
+                    "hora_local": "17:00",
+                    "local": "Talleres Cordoba",
+                    "visitante": "Velez Sarsfield"
                 },
                 {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "21:00",
-                    "hora_local": "15:00",
-                    "local": "Defensa y Justicia",
-                    "visitante": "Dep. Riestra"
+                    "competicion": "Brazil - Serie A",
+                    "hora": "01:30",
+                    "hora_local": "19:30",
+                    "local": "Fluminense",
+                    "visitante": "Bahia"
                 },
                 {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:15",
-                    "hora_local": "17:15",
-                    "local": "Gimnasia L.P.",
-                    "visitante": "River Plate"
+                    "competicion": "Brazil - Serie A",
+                    "hora": "01:30",
+                    "hora_local": "19:30",
+                    "local": "Vitoria",
+                    "visitante": "Palmeiras"
                 },
                 {
                     "competicion": "Brazil - Serie A",
                     "hora": "23:30",
                     "hora_local": "17:30",
-                    "local": "Internacional",
-                    "visitante": "Flamengo RJ"
-                },
-                {
-                    "competicion": "Brazil - Serie A",
-                    "hora": "23:30",
-                    "hora_local": "17:30",
-                    "local": "Mirassol",
-                    "visitante": "Remo"
+                    "local": "Corinthians",
+                    "visitante": "Athletico-PR"
                 }
             ]
         },
         "proximos_partidos": [
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:30",
-                "hora_local": "19:30",
-                "local": "Instituto",
-                "visitante": "Platense"
-            },
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Brazil - Serie A",
-                "hora": "01:30",
-                "hora_local": "19:30",
-                "local": "Fluminense",
-                "visitante": "Bahia"
-            },
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Brazil - Serie A",
-                "hora": "01:30",
-                "hora_local": "19:30",
-                "local": "Vitoria",
-                "visitante": "Palmeiras"
-            },
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "23:00",
-                "hora_local": "17:00",
-                "local": "Ind. Rivadavia",
-                "visitante": "Huracan"
-            },
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "23:00",
-                "hora_local": "17:00",
-                "local": "Talleres Cordoba",
-                "visitante": "Velez Sarsfield"
-            },
-            {
-                "fecha": "2026-07-30",
-                "competicion": "Brazil - Serie A",
-                "hora": "23:30",
-                "hora_local": "17:30",
-                "local": "Corinthians",
-                "visitante": "Athletico-PR"
-            },
             {
                 "fecha": "2026-07-31",
                 "competicion": "Argentina - Liga Profesional",
