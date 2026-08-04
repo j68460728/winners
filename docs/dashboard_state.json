@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-08-03T09:53:57.082073+00:00",
+    "timestamp_utc": "2026-08-04T08:44:19.345726+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-03T09:53:44.822734+00:00",
+            "timestamp_utc": "2026-08-04T08:44:09.608767+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-03T09:53:55.680828+00:00",
+            "ultima_consulta_utc": "2026-08-04T08:44:18.524459+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -122,122 +122,21 @@
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "SC0",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "Celtic",
-                    "visitante": "Dundee FC"
+                    "competicion": "Argentina - Liga Profesional",
+                    "hora": "01:15",
+                    "hora_local": "19:15",
+                    "local": "Central Cordoba",
+                    "visitante": "San Lorenzo"
                 },
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:30",
-                    "hora_local": "19:30",
-                    "local": "Lanus",
-                    "visitante": "Instituto"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "20:45",
-                    "hora_local": "14:45",
-                    "local": "Sarmiento Junin",
-                    "visitante": "Ind. Rivadavia"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:00",
-                    "hora_local": "17:00",
-                    "local": "Platense",
-                    "visitante": "Talleres Cordoba"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:00",
-                    "hora_local": "17:00",
-                    "local": "Velez Sarsfield",
-                    "visitante": "Independiente"
-                },
-                {
-                    "competicion": "Denmark - Superliga",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Odense",
-                    "visitante": "Sonderjyske"
-                },
-                {
-                    "competicion": "Finland - Veikkausliiga",
-                    "hora": "17:00",
-                    "hora_local": "11:00",
-                    "local": "SJK",
-                    "visitante": "HJK"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Club America",
-                    "visitante": "Santos Laguna"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "02:05",
-                    "hora_local": "20:05",
-                    "local": "Toluca",
-                    "visitante": "Necaxa"
-                },
-                {
-                    "competicion": "Poland - Ekstraklasa",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Cracovia",
-                    "visitante": "Pogon Szczecin"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "16:30",
-                    "hora_local": "10:30",
-                    "local": "U. Cluj",
-                    "visitante": "FC Botosani"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "FCSB",
-                    "visitante": "Farul Constanta"
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Djurgarden",
-                    "visitante": "Vasteras SK"
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Halmstad",
-                    "visitante": "Sirius"
+                    "hora": "01:15",
+                    "hora_local": "19:15",
+                    "local": "Huracan",
+                    "visitante": "Atl. Tucuman"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-08-04",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:15",
-                "hora_local": "19:15",
-                "local": "Central Cordoba",
-                "visitante": "San Lorenzo"
-            },
-            {
-                "fecha": "2026-08-04",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:15",
-                "hora_local": "19:15",
-                "local": "Huracan",
-                "visitante": "Atl. Tucuman"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
