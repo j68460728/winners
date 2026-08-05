@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-08-04T08:44:19.345726+00:00",
+    "timestamp_utc": "2026-08-05T08:42:24.594761+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-04T08:44:09.608767+00:00",
+            "timestamp_utc": "2026-08-05T08:42:12.986756+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,76 +31,24 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-04T08:44:18.524459+00:00",
+            "ultima_consulta_utc": "2026-08-05T08:42:23.614476+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
             ],
             "registros_main": 21,
-            "registros_extra": 117,
-            "total_registros": 138,
-            "total_competiciones": 18,
+            "registros_extra": 3,
+            "total_registros": 24,
+            "total_competiciones": 5,
             "ultima_fecha_main": "2026-08-03",
-            "ultima_fecha_extra": "2026-08-09",
+            "ultima_fecha_extra": "2026-08-06",
             "estado_main": "OK",
             "estado_extra": "OK"
         },
         "observacion_dia": {
             "ligas_activas": [
                 {
-                    "competicion": "Argentina - Liga Profesional",
-                    "partidos": 15
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "partidos": 15
-                },
-                {
-                    "competicion": "Brazil - Serie A Betano",
-                    "partidos": 10
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "partidos": 9
-                },
-                {
-                    "competicion": "Poland - Ekstraklasa",
-                    "partidos": 9
-                },
-                {
-                    "competicion": "China - Super League",
-                    "partidos": 8
-                },
-                {
-                    "competicion": "Norway - Eliteserien",
-                    "partidos": 8
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "partidos": 8
-                },
-                {
                     "competicion": "SC0",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "Austria - Bundesliga",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "Denmark - Superliga",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "Finland - Veikkausliiga",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "Switzerland - Super League",
                     "partidos": 6
                 },
                 {
@@ -116,27 +64,37 @@
                     "partidos": 5
                 },
                 {
-                    "competicion": "Ireland - Premier Division",
-                    "partidos": 5
+                    "competicion": "Argentina - Liga Profesional",
+                    "partidos": 3
                 }
             ],
             "partidos_hoy": [
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Central Cordoba",
-                    "visitante": "San Lorenzo"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Huracan",
-                    "visitante": "Atl. Tucuman"
+                    "hora": "23:00",
+                    "hora_local": "17:00",
+                    "local": "Boca Juniors",
+                    "visitante": "Estudiantes L.P."
                 }
             ]
         },
-        "proximos_partidos": []
+        "proximos_partidos": [
+            {
+                "fecha": "2026-08-06",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "01:15",
+                "hora_local": "19:15",
+                "local": "Tigre",
+                "visitante": "Belgrano"
+            },
+            {
+                "fecha": "2026-08-06",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "23:00",
+                "hora_local": "17:00",
+                "local": "Union de Santa Fe",
+                "visitante": "Lanus"
+            }
+        ]
     }
 }
