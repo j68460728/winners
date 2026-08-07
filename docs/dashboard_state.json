@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-08-06T08:43:41.710619+00:00",
+    "timestamp_utc": "2026-08-07T07:22:42.620019+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-06T08:43:31.673466+00:00",
+            "timestamp_utc": "2026-08-07T07:22:32.805945+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-06T08:43:40.963529+00:00",
+            "ultima_consulta_utc": "2026-08-07T07:22:41.857518+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -68,22 +68,7 @@
                     "partidos": 3
                 }
             ],
-            "partidos_hoy": [
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Tigre",
-                    "visitante": "Belgrano"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:00",
-                    "hora_local": "17:00",
-                    "local": "Union de Santa Fe",
-                    "visitante": "Lanus"
-                }
-            ]
+            "partidos_hoy": []
         },
         "proximos_partidos": []
     }
