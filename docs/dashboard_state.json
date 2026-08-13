@@ -1,5 +1,5 @@
 {
-    "timestamp_utc": "2026-08-12T07:39:00.966341+00:00",
+    "timestamp_utc": "2026-08-13T07:40:14.535719+00:00",
     "estado_experimento": {
         "evidence_age_days": 0,
         "versiones_algoritmo": [],
@@ -11,7 +11,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-12T07:38:48.832776+00:00",
+            "timestamp_utc": "2026-08-13T07:40:02.625690+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -31,7 +31,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-12T07:38:59.185267+00:00",
+            "ultima_consulta_utc": "2026-08-13T07:40:13.065532+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -144,15 +144,7 @@
                     "partidos": 1
                 }
             ],
-            "partidos_hoy": [
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:00",
-                    "hora_local": "19:00",
-                    "local": "Talleres Cordoba",
-                    "visitante": "Lanus"
-                }
-            ]
+            "partidos_hoy": []
         },
         "proximos_partidos": []
     }
