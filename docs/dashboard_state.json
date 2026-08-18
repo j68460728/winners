@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-08-17T07:03:00.079640+00:00",
+    "timestamp_utc": "2026-08-18T06:50:21.543401+00:00",
     "estado_experimento": {
-        "evidence_age_days": 2,
+        "evidence_age_days": 3,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-17T07:02:45.975039+00:00",
+            "timestamp_utc": "2026-08-18T06:50:06.251854+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -35,7 +35,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-17T07:02:58.795916+00:00",
+            "ultima_consulta_utc": "2026-08-18T06:50:20.052469+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -166,187 +166,35 @@
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "E1",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Cardiff",
-                    "visitante": "Wrexham"
-                },
-                {
-                    "competicion": "P1",
-                    "hora": "20:15",
-                    "hora_local": "14:15",
-                    "local": "Casa Pia",
-                    "visitante": "Benfica"
-                },
-                {
-                    "competicion": "SP1",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Dep. A Coruna",
-                    "visitante": "Elche"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Sp Gijon",
-                    "visitante": "Sabadell"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "20:30",
-                    "hora_local": "14:30",
-                    "local": "Almeria",
-                    "visitante": "Eldense"
-                },
-                {
-                    "competicion": "T1",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "Samsunspor",
-                    "visitante": "Goztep"
-                },
-                {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "00:15",
-                    "hora_local": "18:15",
-                    "local": "Barracas Central",
-                    "visitante": "Rosario Central"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "00:15",
-                    "hora_local": "18:15",
-                    "local": "Central Cordoba",
-                    "visitante": "Instituto"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "18:45",
-                    "hora_local": "12:45",
-                    "local": "Estudiantes Rio Cuarto",
-                    "visitante": "Atl. Tucuman"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "21:00",
-                    "hora_local": "15:00",
-                    "local": "Lanus",
-                    "visitante": "Independiente"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:15",
-                    "hora_local": "17:15",
-                    "local": "Velez Sarsfield",
-                    "visitante": "Defensa y Justicia"
-                },
-                {
-                    "competicion": "Denmark - Superliga",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Brondby",
-                    "visitante": "Sonderjyske"
-                },
-                {
-                    "competicion": "Finland - Veikkausliiga",
-                    "hora": "16:00",
-                    "hora_local": "10:00",
-                    "local": "Gnistan",
-                    "visitante": "Ilves"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Club America",
-                    "visitante": "Atl. San Luis"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "02:10",
-                    "hora_local": "20:10",
-                    "local": "Santos Laguna",
-                    "visitante": "Guadalajara Chivas"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "04:00",
-                    "hora_local": "22:00",
-                    "local": "Club Tijuana",
-                    "visitante": "Cruz Azul"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "16:30",
-                    "hora_local": "10:30",
-                    "local": "U. Cluj",
-                    "visitante": "UTA Arad"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "FCSB",
-                    "visitante": "FC Botosani"
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Hacken",
-                    "visitante": "Halmstad"
-                },
-                {
-                    "competicion": "USA - MLS",
                     "hora": "01:30",
                     "hora_local": "19:30",
-                    "local": "Austin FC",
-                    "visitante": "FC Dallas"
+                    "local": "Gimnasia Mendoza",
+                    "visitante": "Talleres Cordoba"
                 },
                 {
-                    "competicion": "USA - MLS",
-                    "hora": "03:30",
-                    "hora_local": "21:30",
-                    "local": "Seattle Sounders",
-                    "visitante": "Vancouver Whitecaps"
+                    "competicion": "Brazil - Serie A",
+                    "hora": "00:00",
+                    "hora_local": "18:00",
+                    "local": "Internacional",
+                    "visitante": "Remo"
+                },
+                {
+                    "competicion": "Mexico - Liga MX",
+                    "hora": "02:00",
+                    "hora_local": "20:00",
+                    "local": "Necaxa",
+                    "visitante": "Club Leon"
+                },
+                {
+                    "competicion": "Mexico - Liga MX",
+                    "hora": "04:06",
+                    "hora_local": "22:06",
+                    "local": "Pachuca",
+                    "visitante": "Puebla"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-08-18",
-                "competicion": "Brazil - Serie A",
-                "hora": "00:00",
-                "hora_local": "18:00",
-                "local": "Internacional",
-                "visitante": "Remo"
-            },
-            {
-                "fecha": "2026-08-18",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:30",
-                "hora_local": "19:30",
-                "local": "Gimnasia Mendoza",
-                "visitante": "Talleres Cordoba"
-            },
-            {
-                "fecha": "2026-08-18",
-                "competicion": "Mexico - Liga MX",
-                "hora": "02:00",
-                "hora_local": "20:00",
-                "local": "Necaxa",
-                "visitante": "Club Leon"
-            },
-            {
-                "fecha": "2026-08-18",
-                "competicion": "Mexico - Liga MX",
-                "hora": "04:06",
-                "hora_local": "22:06",
-                "local": "Pachuca",
-                "visitante": "Puebla"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
