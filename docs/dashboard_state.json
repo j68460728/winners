@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-08-20T06:53:01.853721+00:00",
+    "timestamp_utc": "2026-08-21T06:53:51.457804+00:00",
     "estado_experimento": {
-        "evidence_age_days": 5,
+        "evidence_age_days": 6,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 0,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-20T06:52:50.349009+00:00",
+            "timestamp_utc": "2026-08-21T06:53:38.653928+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -35,7 +35,7 @@
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-20T06:53:00.870019+00:00",
+            "ultima_consulta_utc": "2026-08-21T06:53:50.586111+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -68,127 +68,7 @@
                     "partidos": 1
                 }
             ],
-            "partidos_hoy": [
-                {
-                    "competicion": "E2",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Sheffield Wed",
-                    "visitante": "Bradford City"
-                },
-                {
-                    "competicion": "SP1",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Rayo Vallecano",
-                    "visitante": "Alaves"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "Columbus Crew",
-                    "visitante": "CF Montreal"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "DC United",
-                    "visitante": "New England Revolution"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "FC Cincinnati",
-                    "visitante": "New York City"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "New York Red Bulls",
-                    "visitante": "Nashville SC"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "Orlando City",
-                    "visitante": "Chicago Fire"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "Philadelphia Union",
-                    "visitante": "Inter Miami"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:30",
-                    "hora_local": "18:30",
-                    "local": "Toronto FC",
-                    "visitante": "Charlotte"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "01:00",
-                    "hora_local": "19:00",
-                    "local": "Sporting Kansas City",
-                    "visitante": "St. Louis City"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "01:30",
-                    "hora_local": "19:30",
-                    "local": "Minnesota United",
-                    "visitante": "Atlanta Utd"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "02:30",
-                    "hora_local": "20:30",
-                    "local": "Colorado Rapids",
-                    "visitante": "Los Angeles FC"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "02:30",
-                    "hora_local": "20:30",
-                    "local": "Real Salt Lake",
-                    "visitante": "FC Dallas"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "02:30",
-                    "hora_local": "20:30",
-                    "local": "Seattle Sounders",
-                    "visitante": "Austin FC"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "03:30",
-                    "hora_local": "21:30",
-                    "local": "Los Angeles Galaxy",
-                    "visitante": "San Jose Earthquakes"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "03:30",
-                    "hora_local": "21:30",
-                    "local": "Portland Timbers",
-                    "visitante": "San Diego FC"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "03:30",
-                    "hora_local": "21:30",
-                    "local": "Vancouver Whitecaps",
-                    "visitante": "Houston Dynamo"
-                }
-            ]
+            "partidos_hoy": []
         },
         "proximos_partidos": []
     }
