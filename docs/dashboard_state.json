@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-08-24T07:06:08.538268+00:00",
+    "timestamp_utc": "2026-08-25T06:54:45.256693+00:00",
     "estado_experimento": {
-        "evidence_age_days": 9,
+        "evidence_age_days": 10,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 1,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-24T07:05:57.265480+00:00",
+            "timestamp_utc": "2026-08-25T06:54:31.662859+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,12 +32,12 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (9 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (10 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-24T07:06:07.411768+00:00",
+            "ultima_consulta_utc": "2026-08-25T06:54:43.735305+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -192,165 +192,28 @@
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "E0",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Fulham",
-                    "visitante": "Chelsea"
-                },
-                {
-                    "competicion": "F2",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Reims",
-                    "visitante": "Annecy"
-                },
-                {
-                    "competicion": "I1",
-                    "hora": "17:30",
-                    "hora_local": "11:30",
-                    "local": "Bologna",
-                    "visitante": "Lazio"
-                },
-                {
-                    "competicion": "I1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Roma",
-                    "visitante": "Fiorentina"
-                },
-                {
-                    "competicion": "P1",
-                    "hora": "20:15",
-                    "hora_local": "14:15",
-                    "local": "Gil Vicente",
-                    "visitante": "Casa Pia"
-                },
-                {
-                    "competicion": "SP1",
-                    "hora": "18:30",
-                    "hora_local": "12:30",
-                    "local": "Osasuna",
-                    "visitante": "Levante"
-                },
-                {
-                    "competicion": "SP1",
-                    "hora": "20:30",
-                    "hora_local": "14:30",
-                    "local": "Malaga",
-                    "visitante": "La Coruna"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Celta B",
-                    "visitante": "Andorra"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "20:30",
-                    "hora_local": "14:30",
-                    "local": "Granada",
-                    "visitante": "Mallorca"
-                },
-                {
-                    "competicion": "T1",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "Kocaelispor",
-                    "visitante": "Amedspor"
+                    "competicion": "Argentina - Liga Profesional",
+                    "hora": "01:15",
+                    "hora_local": "19:15",
+                    "local": "Lanus",
+                    "visitante": "Argentinos Jrs"
                 },
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:30",
-                    "hora_local": "19:30",
-                    "local": "Racing Club",
-                    "visitante": "Boca Juniors"
+                    "hora": "01:15",
+                    "hora_local": "19:15",
+                    "local": "Talleres Cordoba",
+                    "visitante": "Rosario Central"
                 },
                 {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:00",
-                    "hora_local": "17:00",
-                    "local": "Tigre",
-                    "visitante": "Central Cordoba"
-                },
-                {
-                    "competicion": "Denmark - Superliga",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Brondby",
-                    "visitante": "Silkeborg"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
+                    "competicion": "Brazil - Serie A",
                     "hora": "00:00",
                     "hora_local": "18:00",
-                    "local": "Atl. San Luis",
-                    "visitante": "Pachuca"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "02:00",
-                    "hora_local": "20:00",
-                    "local": "UNAM Pumas",
-                    "visitante": "Necaxa"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "16:30",
-                    "hora_local": "10:30",
-                    "local": "FC Botosani",
-                    "visitante": "Csikszereda M. Ciuc"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "Otelul",
-                    "visitante": "FC Arges"
-                },
-                {
-                    "competicion": "Sweden - Allsvenskan",
-                    "hora": "18:00",
-                    "hora_local": "12:00",
-                    "local": "Malmo FF",
-                    "visitante": "Djurgarden"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Atlanta Utd",
-                    "visitante": "Sporting Kansas City"
+                    "local": "Botafogo RJ",
+                    "visitante": "Athletico-PR"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-08-25",
-                "competicion": "Brazil - Serie A",
-                "hora": "00:00",
-                "hora_local": "18:00",
-                "local": "Botafogo RJ",
-                "visitante": "Athletico-PR"
-            },
-            {
-                "fecha": "2026-08-25",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:15",
-                "hora_local": "19:15",
-                "local": "Lanus",
-                "visitante": "Argentinos Jrs"
-            },
-            {
-                "fecha": "2026-08-25",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:15",
-                "hora_local": "19:15",
-                "local": "Talleres Cordoba",
-                "visitante": "Rosario Central"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
