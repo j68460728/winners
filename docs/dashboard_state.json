@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-08-25T06:54:45.256693+00:00",
+    "timestamp_utc": "2026-08-26T06:55:34.078994+00:00",
     "estado_experimento": {
-        "evidence_age_days": 10,
+        "evidence_age_days": 11,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 1,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-25T06:54:31.662859+00:00",
+            "timestamp_utc": "2026-08-26T06:55:22.988396+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,21 +32,21 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (10 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (11 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-25T06:54:43.735305+00:00",
+            "ultima_consulta_utc": "2026-08-26T06:55:33.192447+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
             ],
-            "registros_main": 165,
+            "registros_main": 5,
             "registros_extra": 113,
-            "total_registros": 278,
-            "total_competiciones": 34,
-            "ultima_fecha_main": "2026-08-24",
+            "total_registros": 118,
+            "total_competiciones": 16,
+            "ultima_fecha_main": "2026-08-27",
             "ultima_fecha_extra": "2026-08-25",
             "estado_main": "OK",
             "estado_extra": "OK"
@@ -62,60 +62,12 @@
                     "partidos": 15
                 },
                 {
-                    "competicion": "E1",
-                    "partidos": 12
-                },
-                {
-                    "competicion": "E3",
-                    "partidos": 12
-                },
-                {
-                    "competicion": "EC",
-                    "partidos": 12
-                },
-                {
-                    "competicion": "E2",
-                    "partidos": 11
-                },
-                {
-                    "competicion": "SP2",
-                    "partidos": 11
-                },
-                {
-                    "competicion": "E0",
-                    "partidos": 10
-                },
-                {
-                    "competicion": "I1",
-                    "partidos": 10
-                },
-                {
-                    "competicion": "I2",
-                    "partidos": 10
-                },
-                {
                     "competicion": "Brazil - Serie A",
                     "partidos": 10
                 },
                 {
                     "competicion": "Japan - J1 League",
                     "partidos": 10
-                },
-                {
-                    "competicion": "F1",
-                    "partidos": 9
-                },
-                {
-                    "competicion": "F2",
-                    "partidos": 9
-                },
-                {
-                    "competicion": "SP1",
-                    "partidos": 9
-                },
-                {
-                    "competicion": "T1",
-                    "partidos": 9
                 },
                 {
                     "competicion": "Mexico - Liga MX",
@@ -134,24 +86,8 @@
                     "partidos": 8
                 },
                 {
-                    "competicion": "P1",
-                    "partidos": 7
-                },
-                {
                     "competicion": "Poland - Ekstraklasa",
                     "partidos": 7
-                },
-                {
-                    "competicion": "B1",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "G1",
-                    "partidos": 6
-                },
-                {
-                    "competicion": "N1",
-                    "partidos": 6
                 },
                 {
                     "competicion": "Denmark - Superliga",
@@ -162,16 +98,8 @@
                     "partidos": 6
                 },
                 {
-                    "competicion": "SC1",
-                    "partidos": 5
-                },
-                {
-                    "competicion": "SC2",
-                    "partidos": 5
-                },
-                {
-                    "competicion": "SC3",
-                    "partidos": 5
+                    "competicion": "SP1",
+                    "partidos": 4
                 },
                 {
                     "competicion": "Ireland - Premier Division",
@@ -186,34 +114,45 @@
                     "partidos": 3
                 },
                 {
-                    "competicion": "SC0",
+                    "competicion": "EC",
                     "partidos": 1
                 }
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Lanus",
-                    "visitante": "Argentinos Jrs"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:15",
-                    "hora_local": "19:15",
-                    "local": "Talleres Cordoba",
-                    "visitante": "Rosario Central"
-                },
-                {
-                    "competicion": "Brazil - Serie A",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Botafogo RJ",
-                    "visitante": "Athletico-PR"
+                    "competicion": "SP1",
+                    "hora": "20:00",
+                    "hora_local": "14:00",
+                    "local": "Real Madrid",
+                    "visitante": "Sociedad"
                 }
             ]
         },
-        "proximos_partidos": []
+        "proximos_partidos": [
+            {
+                "fecha": "2026-08-27",
+                "competicion": "SP1",
+                "hora": "19:30",
+                "hora_local": "13:30",
+                "local": "Celta",
+                "visitante": "Osasuna"
+            },
+            {
+                "fecha": "2026-08-27",
+                "competicion": "EC",
+                "hora": "19:45",
+                "hora_local": "13:45",
+                "local": "Boreham Wood",
+                "visitante": "Boston Utd"
+            },
+            {
+                "fecha": "2026-08-27",
+                "competicion": "SP1",
+                "hora": "20:00",
+                "hora_local": "14:00",
+                "local": "Barcelona",
+                "visitante": "Ath Bilbao"
+            }
+        ]
     }
 }
