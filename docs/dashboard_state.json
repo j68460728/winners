@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-08-26T06:55:34.078994+00:00",
+    "timestamp_utc": "2026-08-27T17:30:23.175671+00:00",
     "estado_experimento": {
-        "evidence_age_days": 11,
+        "evidence_age_days": 12,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 1,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-08-26T06:55:22.988396+00:00",
+            "timestamp_utc": "2026-08-27T17:30:09.687832+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,12 +32,12 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (11 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (12 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-08-26T06:55:33.192447+00:00",
+            "ultima_consulta_utc": "2026-08-27T17:30:22.038695+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -120,39 +120,28 @@
             ],
             "partidos_hoy": [
                 {
+                    "competicion": "EC",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Boreham Wood",
+                    "visitante": "Boston Utd"
+                },
+                {
+                    "competicion": "SP1",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Celta",
+                    "visitante": "Osasuna"
+                },
+                {
                     "competicion": "SP1",
                     "hora": "20:00",
                     "hora_local": "14:00",
-                    "local": "Real Madrid",
-                    "visitante": "Sociedad"
+                    "local": "Barcelona",
+                    "visitante": "Ath Bilbao"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-08-27",
-                "competicion": "SP1",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Celta",
-                "visitante": "Osasuna"
-            },
-            {
-                "fecha": "2026-08-27",
-                "competicion": "EC",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Boreham Wood",
-                "visitante": "Boston Utd"
-            },
-            {
-                "fecha": "2026-08-27",
-                "competicion": "SP1",
-                "hora": "20:00",
-                "hora_local": "14:00",
-                "local": "Barcelona",
-                "visitante": "Ath Bilbao"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
