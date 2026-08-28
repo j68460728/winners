@@ -1,0 +1,29 @@
+{
+    "prediction_id": "WIN-45E2DE3148AF",
+    "status": "PENDING",
+    "metadata": {
+        "timestamp_utc": "2026-08-28T18:22:48.641466+00:00",
+        "winners_version": "1.0.0",
+        "config_hash": "18d302e8c1241200b6afde45d5c4ad3baf605022065544c3b2dccfc49d1d1c97",
+        "github_run_id": "33198992826",
+        "github_sha": "8604494c5f2d55b6f6139e4db5a3ac7bf6c98254"
+    },
+    "source": {
+        "provider": "football-data.co.uk",
+        "dataset": "fixtures.csv (Live)",
+        "snapshot": "20260828T182248Z_fixtures.csv"
+    },
+    "match": {
+        "league": "2.Bundesliga",
+        "date": "30/08/2026",
+        "home_team": "Magdeburg",
+        "away_team": "Holstein Kiel"
+    },
+    "prediction": {
+        "winners_pick": "A",
+        "mkt_pick": "H",
+        "winners_odds": 3.0433333333333334,
+        "mkt_odds": 2.15
+    },
+    "settlement": {}
+}

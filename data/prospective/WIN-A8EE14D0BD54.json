@@ -1,0 +1,34 @@
+{
+    "prediction_id": "WIN-A8EE14D0BD54",
+    "status": "SETTLED",
+    "metadata": {
+        "timestamp_utc": "2026-08-28T18:22:48.641466+00:00",
+        "winners_version": "1.0.0",
+        "config_hash": "18d302e8c1241200b6afde45d5c4ad3baf605022065544c3b2dccfc49d1d1c97",
+        "github_run_id": "33198992826",
+        "github_sha": "8604494c5f2d55b6f6139e4db5a3ac7bf6c98254"
+    },
+    "source": {
+        "provider": "football-data.co.uk",
+        "dataset": "fixtures.csv (Live)",
+        "snapshot": "20260828T182248Z_fixtures.csv"
+    },
+    "match": {
+        "league": "Premier",
+        "date": "29/08/2026",
+        "home_team": "Liverpool",
+        "away_team": "Nott'm Forest"
+    },
+    "prediction": {
+        "winners_pick": "H",
+        "mkt_pick": "H",
+        "winners_odds": 1.54,
+        "mkt_odds": 1.54
+    },
+    "settlement": {
+        "result": "A",
+        "profit": -1.0,
+        "settlement_timestamp_utc": "2026-08-28T18:22:58.031811+00:00",
+        "source": "football-data.co.uk (historical CSV)"
+    }
+}
