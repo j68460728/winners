@@ -3,7 +3,7 @@
 > **IMPORTANTE:** Este documento es una reconstrucción 100% determinista. Los archivos JSON individuales son la única fuente de verdad.
 
 ## ⏳ Evidence Age (Madurez del Experimento)
-- **Días de Recolección Prospectiva:** 14 días
+- **Días de Recolección Prospectiva:** 15 días
 - **Predicciones Liquidadas (Muestra N):** 2
 - **Ligas Monitorizadas:** 2
 
