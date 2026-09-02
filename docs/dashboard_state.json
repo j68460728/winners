@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-09-01T11:22:37.497035+00:00",
+    "timestamp_utc": "2026-09-02T10:56:42.589563+00:00",
     "estado_experimento": {
-        "evidence_age_days": 17,
+        "evidence_age_days": 18,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 2,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-09-01T11:22:27.277111+00:00",
+            "timestamp_utc": "2026-09-02T10:56:28.347429+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,12 +32,12 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (17 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (18 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-09-01T11:22:36.682428+00:00",
+            "ultima_consulta_utc": "2026-09-02T10:56:41.456836+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -116,474 +116,232 @@
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "E1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Lincoln",
-                    "visitante": "Blackburn"
+                    "competicion": "B1",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "St Truiden",
+                    "visitante": "St. Gilloise"
                 },
                 {
                     "competicion": "E1",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Portsmouth",
-                    "visitante": "Derby"
+                    "local": "Millwall",
+                    "visitante": "Wrexham"
                 },
                 {
                     "competicion": "E1",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Preston",
-                    "visitante": "Bristol City"
+                    "local": "QPR",
+                    "visitante": "Cardiff"
                 },
                 {
                     "competicion": "E1",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Sheffield United",
-                    "visitante": "Bolton"
-                },
-                {
-                    "competicion": "E1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Swansea",
-                    "visitante": "Watford"
-                },
-                {
-                    "competicion": "E1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "West Ham",
-                    "visitante": "Wolves"
+                    "local": "West Brom",
+                    "visitante": "Charlton"
                 },
                 {
                     "competicion": "E1",
                     "hora": "20:00",
                     "hora_local": "14:00",
-                    "local": "Birmingham",
-                    "visitante": "Southampton"
+                    "local": "Burnley",
+                    "visitante": "Middlesbrough"
                 },
                 {
-                    "competicion": "E1",
+                    "competicion": "E2",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Barnsley",
+                    "visitante": "Blackpool"
+                },
+                {
+                    "competicion": "E2",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Burton",
+                    "visitante": "AFC Wimbledon"
+                },
+                {
+                    "competicion": "E2",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Luton",
+                    "visitante": "Stockport"
+                },
+                {
+                    "competicion": "E2",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Wigan",
+                    "visitante": "Milton Keynes Dons"
+                },
+                {
+                    "competicion": "E2",
                     "hora": "20:00",
                     "hora_local": "14:00",
-                    "local": "Stoke",
-                    "visitante": "Norwich"
+                    "local": "Reading",
+                    "visitante": "Mansfield"
                 },
                 {
-                    "competicion": "E2",
+                    "competicion": "SC0",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Bradford",
-                    "visitante": "Cambridge"
+                    "local": "Celtic",
+                    "visitante": "Aberdeen"
                 },
                 {
-                    "competicion": "E2",
+                    "competicion": "SC0",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Bromley",
-                    "visitante": "Leyton Orient"
+                    "local": "Dundee",
+                    "visitante": "St Johnstone"
                 },
                 {
-                    "competicion": "E2",
+                    "competicion": "SC0",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Doncaster",
-                    "visitante": "Notts County"
+                    "local": "Kilmarnock",
+                    "visitante": "St Mirren"
                 },
                 {
-                    "competicion": "E2",
+                    "competicion": "SC0",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Huddersfield",
-                    "visitante": "Oxford"
+                    "local": "Motherwell",
+                    "visitante": "Dundee United"
                 },
                 {
-                    "competicion": "E2",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Leicester",
-                    "visitante": "Plymouth"
-                },
-                {
-                    "competicion": "E2",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Peterboro",
-                    "visitante": "Stevenage"
-                },
-                {
-                    "competicion": "E2",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Wycombe",
-                    "visitante": "Sheffield Weds"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Accrington",
-                    "visitante": "Grimsby"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Bristol Rvs",
-                    "visitante": "Colchester"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Cheltenham",
-                    "visitante": "York"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Chesterfield",
-                    "visitante": "Gillingham"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Crewe",
-                    "visitante": "Walsall"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Exeter",
-                    "visitante": "Barnet"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Fleetwood Town",
-                    "visitante": "Oldham"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Northampton",
-                    "visitante": "Crawley Town"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Rochdale",
-                    "visitante": "Shrewsbury"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Salford",
-                    "visitante": "Newport County"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Swindon",
-                    "visitante": "Port Vale"
-                },
-                {
-                    "competicion": "E3",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Tranmere",
-                    "visitante": "Rotherham"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Halifax",
-                    "visitante": "Hartlepool"
+                    "competicion": "SC0",
+                    "hora": "20:00",
+                    "hora_local": "14:00",
+                    "local": "Falkirk",
+                    "visitante": "Rangers"
                 },
                 {
                     "competicion": "Austria - Bundesliga",
-                    "hora": "18:30",
-                    "hora_local": "12:30",
-                    "local": "Wolfsberger AC",
-                    "visitante": "LASK"
+                    "hora": "17:30",
+                    "hora_local": "11:30",
+                    "local": "Austria Vienna",
+                    "visitante": "Tirol"
+                },
+                {
+                    "competicion": "Austria - Bundesliga",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Salzburg",
+                    "visitante": "SK Rapid"
+                },
+                {
+                    "competicion": "Brazil - Serie A",
+                    "hora": "23:30",
+                    "hora_local": "17:30",
+                    "local": "Flamengo RJ",
+                    "visitante": "Mirassol"
+                },
+                {
+                    "competicion": "Denmark - Superliga",
+                    "hora": "19:00",
+                    "hora_local": "13:00",
+                    "local": "Aarhus",
+                    "visitante": "Midtjylland"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Avispa Fukuoka",
+                    "visitante": "Urawa Reds"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Cerezo Osaka",
+                    "visitante": "Kashiwa Reysol"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Chiba",
+                    "visitante": "Okayama"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Machida",
+                    "visitante": "Kawasaki Frontale"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Mito",
+                    "visitante": "Kashima Antlers"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Sanfrecce Hiroshima",
+                    "visitante": "Nagoya Grampus"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Shimizu S-Pulse",
+                    "visitante": "FC Tokyo"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Verdy",
+                    "visitante": "Vissel Kobe"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "V-Varen Nagasaki",
+                    "visitante": "Gamba Osaka"
+                },
+                {
+                    "competicion": "Japan - J1 League",
+                    "hora": "11:00",
+                    "hora_local": "05:00",
+                    "local": "Yokohama F. Marinos",
+                    "visitante": "Kyoto"
                 },
                 {
                     "competicion": "Switzerland - Super League",
                     "hora": "19:30",
                     "hora_local": "13:30",
-                    "local": "Zurich",
-                    "visitante": "Young Boys"
+                    "local": "Grasshoppers",
+                    "visitante": "St. Gallen"
+                },
+                {
+                    "competicion": "Switzerland - Super League",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Luzern",
+                    "visitante": "Vaduz"
+                },
+                {
+                    "competicion": "Switzerland - Super League",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Thun",
+                    "visitante": "Lausanne"
                 }
             ]
         },
         "proximos_partidos": [
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Avispa Fukuoka",
-                "visitante": "Urawa Reds"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Cerezo Osaka",
-                "visitante": "Kashiwa Reysol"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Chiba",
-                "visitante": "Okayama"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Machida",
-                "visitante": "Kawasaki Frontale"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Mito",
-                "visitante": "Kashima Antlers"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Sanfrecce Hiroshima",
-                "visitante": "Nagoya Grampus"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Shimizu S-Pulse",
-                "visitante": "FC Tokyo"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Verdy",
-                "visitante": "Vissel Kobe"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "V-Varen Nagasaki",
-                "visitante": "Gamba Osaka"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Japan - J1 League",
-                "hora": "11:00",
-                "hora_local": "05:00",
-                "local": "Yokohama F. Marinos",
-                "visitante": "Kyoto"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Austria - Bundesliga",
-                "hora": "17:30",
-                "hora_local": "11:30",
-                "local": "Austria Vienna",
-                "visitante": "Tirol"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Denmark - Superliga",
-                "hora": "19:00",
-                "hora_local": "13:00",
-                "local": "Aarhus",
-                "visitante": "Midtjylland"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "B1",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "St Truiden",
-                "visitante": "St. Gilloise"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Austria - Bundesliga",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Salzburg",
-                "visitante": "SK Rapid"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Switzerland - Super League",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Grasshoppers",
-                "visitante": "St. Gallen"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Switzerland - Super League",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Luzern",
-                "visitante": "Vaduz"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Switzerland - Super League",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Thun",
-                "visitante": "Lausanne"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E1",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Millwall",
-                "visitante": "Wrexham"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E1",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "QPR",
-                "visitante": "Cardiff"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E1",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "West Brom",
-                "visitante": "Charlton"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E2",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Barnsley",
-                "visitante": "Blackpool"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E2",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Burton",
-                "visitante": "AFC Wimbledon"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E2",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Luton",
-                "visitante": "Stockport"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E2",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Wigan",
-                "visitante": "Milton Keynes Dons"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "SC0",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Celtic",
-                "visitante": "Aberdeen"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "SC0",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Dundee",
-                "visitante": "St Johnstone"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "SC0",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Kilmarnock",
-                "visitante": "St Mirren"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "SC0",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Motherwell",
-                "visitante": "Dundee United"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E1",
-                "hora": "20:00",
-                "hora_local": "14:00",
-                "local": "Burnley",
-                "visitante": "Middlesbrough"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "E2",
-                "hora": "20:00",
-                "hora_local": "14:00",
-                "local": "Reading",
-                "visitante": "Mansfield"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "SC0",
-                "hora": "20:00",
-                "hora_local": "14:00",
-                "local": "Falkirk",
-                "visitante": "Rangers"
-            },
-            {
-                "fecha": "2026-09-02",
-                "competicion": "Brazil - Serie A",
-                "hora": "23:30",
-                "hora_local": "17:30",
-                "local": "Flamengo RJ",
-                "visitante": "Mirassol"
-            },
             {
                 "fecha": "2026-09-03",
                 "competicion": "Poland - Ekstraklasa",
