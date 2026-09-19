@@ -3,13 +3,13 @@
 > **IMPORTANTE:** Este documento es una reconstrucción 100% determinista. Los archivos JSON individuales son la única fuente de verdad.
 
 ## ⏳ Evidence Age (Madurez del Experimento)
-- **Días de Recolección Prospectiva:** 34 días
-- **Predicciones Liquidadas (Muestra N):** 3
+- **Días de Recolección Prospectiva:** 35 días
+- **Predicciones Liquidadas (Muestra N):** 4
 - **Ligas Monitorizadas:** 2
 
 ## 📊 Métricas Globales (Solo apuestas liquidadas)
-- **Beneficio Neto (Bankroll):** -1.54 uds
-- **Yield (ROI):** -51.33%
+- **Beneficio Neto (Bankroll):** -0.41 uds
+- **Yield (ROI):** -10.25%
 - **Máximo Drawdown:** 2.00 uds
 
 ## Registro Histórico
@@ -21,3 +21,4 @@
 | WIN-45E2DE3148AF | 2026-08-28 18:22:48 | 2.Bundesliga | Magdeburg vs Holstein Kiel | A | 3.04 | PENDING | N/A | +0.00 | +0.46 | 0.00 |
 | WIN-A8EE14D0BD54 | 2026-08-28 18:22:48 | Premier | Liverpool vs Nott'm Forest | H | 1.54 | SETTLED | A | -1.00 | -0.54 | 1.00 |
 | WIN-684BF5B601FD | 2026-09-05 10:15:49 | Premier | Nott'm Forest vs Tottenham | A | 2.88 | SETTLED | H | -1.00 | -1.54 | 2.00 |
+| WIN-4B5A25740AF2 | 2026-09-19 10:35:08 | Premier | Bournemouth vs Liverpool | A | 2.13 | SETTLED | A | +1.13 | -0.41 | 0.87 |
