@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-09-21T12:24:37.579722+00:00",
+    "timestamp_utc": "2026-09-22T11:15:05.779970+00:00",
     "estado_experimento": {
-        "evidence_age_days": 37,
+        "evidence_age_days": 38,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 4,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-09-21T12:24:18.756364+00:00",
+            "timestamp_utc": "2026-09-22T11:14:50.308477+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,13 +32,13 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (23 d\u00edas) - WIN-45E2DE3148AF",
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (37 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (24 d\u00edas) - WIN-45E2DE3148AF",
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (38 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-09-21T12:24:35.375952+00:00",
+            "ultima_consulta_utc": "2026-09-22T11:15:03.558713+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -206,78 +206,13 @@
             "partidos_hoy": [
                 {
                     "competicion": "Argentina - Liga Profesional",
-                    "hora": "01:30",
-                    "hora_local": "19:30",
-                    "local": "Velez Sarsfield",
-                    "visitante": "Tigre"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "18:30",
-                    "hora_local": "12:30",
-                    "local": "Aldosivi",
-                    "visitante": "Atl. Tucuman"
-                },
-                {
-                    "competicion": "Argentina - Liga Profesional",
-                    "hora": "23:00",
-                    "hora_local": "17:00",
-                    "local": "Barracas Central",
-                    "visitante": "Ind. Rivadavia"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "01:00",
-                    "hora_local": "19:00",
-                    "local": "Pachuca",
-                    "visitante": "Club Tijuana"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "01:00",
-                    "hora_local": "19:00",
-                    "local": "Toluca",
-                    "visitante": "Santos Laguna"
-                },
-                {
-                    "competicion": "Mexico - Liga MX",
-                    "hora": "03:10",
-                    "hora_local": "21:10",
-                    "local": "Queretaro",
-                    "visitante": "Club Leon"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "16:00",
-                    "hora_local": "10:00",
-                    "local": "Otelul",
-                    "visitante": "Corvinul"
-                },
-                {
-                    "competicion": "Romania - Superliga",
-                    "hora": "19:00",
-                    "hora_local": "13:00",
-                    "local": "Petrolul",
-                    "visitante": "Csikszereda M. Ciuc"
-                },
-                {
-                    "competicion": "USA - MLS",
-                    "hora": "00:00",
-                    "hora_local": "18:00",
-                    "local": "Inter Miami",
-                    "visitante": "San Diego FC"
+                    "hora": "01:15",
+                    "hora_local": "19:15",
+                    "local": "Lanus",
+                    "visitante": "Estudiantes L.P."
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-09-22",
-                "competicion": "Argentina - Liga Profesional",
-                "hora": "01:15",
-                "hora_local": "19:15",
-                "local": "Lanus",
-                "visitante": "Estudiantes L.P."
-            }
-        ]
+        "proximos_partidos": []
     }
 }
