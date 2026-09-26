@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-09-25T11:29:57.170775+00:00",
+    "timestamp_utc": "2026-09-26T11:04:40.628464+00:00",
     "estado_experimento": {
-        "evidence_age_days": 41,
+        "evidence_age_days": 42,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 4,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-09-25T11:29:41.679503+00:00",
+            "timestamp_utc": "2026-09-26T11:04:26.354946+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,13 +32,13 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (27 d\u00edas) - WIN-45E2DE3148AF",
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (41 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (28 d\u00edas) - WIN-45E2DE3148AF",
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (42 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-09-25T11:29:55.674822+00:00",
+            "ultima_consulta_utc": "2026-09-26T11:04:39.307683+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -77,283 +77,218 @@
             ],
             "partidos_hoy": [
                 {
-                    "competicion": "SC1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Arbroath",
-                    "visitante": "Queens Park"
+                    "competicion": "E2",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Cambridge",
+                    "visitante": "AFC Wimbledon"
                 },
                 {
-                    "competicion": "SC1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Ayr",
-                    "visitante": "Stenhousemuir"
+                    "competicion": "E2",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Plymouth",
+                    "visitante": "Burton"
                 },
                 {
-                    "competicion": "SC1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Inverness C",
-                    "visitante": "Morton"
+                    "competicion": "E2",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Stockport",
+                    "visitante": "Peterboro"
                 },
                 {
-                    "competicion": "SC1",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Raith Rvs",
-                    "visitante": "Livingston"
+                    "competicion": "E2",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Wycombe",
+                    "visitante": "Reading"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Bristol Rvs",
+                    "visitante": "Exeter"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Cheltenham",
+                    "visitante": "Chesterfield"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Fleetwood Town",
+                    "visitante": "Rochdale"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Newport County",
+                    "visitante": "Grimsby"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Rotherham",
+                    "visitante": "Crewe"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Shrewsbury",
+                    "visitante": "Colchester"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Swindon",
+                    "visitante": "Accrington"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Tranmere",
+                    "visitante": "Walsall"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "York",
+                    "visitante": "Gillingham"
+                },
+                {
+                    "competicion": "E3",
+                    "hora": "17:30",
+                    "hora_local": "11:30",
+                    "local": "Oldham",
+                    "visitante": "Salford"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Aldershot",
+                    "visitante": "Tamworth"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Altrincham",
+                    "visitante": "Hornchurch"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Boston Utd",
+                    "visitante": "Fylde"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Carlisle",
+                    "visitante": "Woking"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Harrogate",
+                    "visitante": "Eastleigh"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Kidderminster",
+                    "visitante": "Yeovil"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Scunthorpe",
+                    "visitante": "Hartlepool"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Solihull",
+                    "visitante": "Boreham Wood"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Southend",
+                    "visitante": "Barrow"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Sutton",
+                    "visitante": "Forest Green"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Wealdstone",
+                    "visitante": "Gateshead"
+                },
+                {
+                    "competicion": "EC",
+                    "hora": "15:00",
+                    "hora_local": "09:00",
+                    "local": "Worthing",
+                    "visitante": "Halifax"
                 },
                 {
                     "competicion": "SP2",
-                    "hora": "19:30",
-                    "hora_local": "13:30",
-                    "local": "Girona",
-                    "visitante": "Albacete"
+                    "hora": "13:00",
+                    "hora_local": "07:00",
+                    "local": "Ceuta",
+                    "visitante": "Sociedad B"
+                },
+                {
+                    "competicion": "SP2",
+                    "hora": "15:15",
+                    "hora_local": "09:15",
+                    "local": "Granada",
+                    "visitante": "Andorra"
+                },
+                {
+                    "competicion": "SP2",
+                    "hora": "17:30",
+                    "hora_local": "11:30",
+                    "local": "Celta B",
+                    "visitante": "Sabadell"
+                },
+                {
+                    "competicion": "SP2",
+                    "hora": "17:30",
+                    "hora_local": "11:30",
+                    "local": "Tenerife",
+                    "visitante": "Cadiz"
                 }
             ]
         },
         "proximos_partidos": [
-            {
-                "fecha": "2026-09-26",
-                "competicion": "SP2",
-                "hora": "13:00",
-                "hora_local": "07:00",
-                "local": "Ceuta",
-                "visitante": "Sociedad B"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E2",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Cambridge",
-                "visitante": "AFC Wimbledon"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E2",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Plymouth",
-                "visitante": "Burton"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E2",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Stockport",
-                "visitante": "Peterboro"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E2",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Wycombe",
-                "visitante": "Reading"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Bristol Rvs",
-                "visitante": "Exeter"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Cheltenham",
-                "visitante": "Chesterfield"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Fleetwood Town",
-                "visitante": "Rochdale"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Newport County",
-                "visitante": "Grimsby"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Rotherham",
-                "visitante": "Crewe"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Shrewsbury",
-                "visitante": "Colchester"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Swindon",
-                "visitante": "Accrington"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Tranmere",
-                "visitante": "Walsall"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "York",
-                "visitante": "Gillingham"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Aldershot",
-                "visitante": "Tamworth"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Altrincham",
-                "visitante": "Hornchurch"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Boston Utd",
-                "visitante": "Fylde"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Carlisle",
-                "visitante": "Woking"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Harrogate",
-                "visitante": "Eastleigh"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Kidderminster",
-                "visitante": "Yeovil"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Scunthorpe",
-                "visitante": "Hartlepool"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Solihull",
-                "visitante": "Boreham Wood"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Southend",
-                "visitante": "Barrow"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Sutton",
-                "visitante": "Forest Green"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Wealdstone",
-                "visitante": "Gateshead"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "EC",
-                "hora": "15:00",
-                "hora_local": "09:00",
-                "local": "Worthing",
-                "visitante": "Halifax"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "SP2",
-                "hora": "15:15",
-                "hora_local": "09:15",
-                "local": "Granada",
-                "visitante": "Andorra"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "E3",
-                "hora": "17:30",
-                "hora_local": "11:30",
-                "local": "Oldham",
-                "visitante": "Salford"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "SP2",
-                "hora": "17:30",
-                "hora_local": "11:30",
-                "local": "Celta B",
-                "visitante": "Sabadell"
-            },
-            {
-                "fecha": "2026-09-26",
-                "competicion": "SP2",
-                "hora": "17:30",
-                "hora_local": "11:30",
-                "local": "Tenerife",
-                "visitante": "Cadiz"
-            },
             {
                 "fecha": "2026-09-27",
                 "competicion": "SP2",
@@ -393,6 +328,14 @@
                 "hora_local": "14:00",
                 "local": "Oviedo",
                 "visitante": "Sp Gijon"
+            },
+            {
+                "fecha": "2026-09-28",
+                "competicion": "SP2",
+                "hora": "19:30",
+                "hora_local": "13:30",
+                "local": "Leganes",
+                "visitante": "Castellon"
             }
         ]
     }
