@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-09-27T11:43:41.999677+00:00",
+    "timestamp_utc": "2026-09-28T13:21:49.503974+00:00",
     "estado_experimento": {
-        "evidence_age_days": 43,
+        "evidence_age_days": 44,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 4,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-09-27T11:43:22.367271+00:00",
+            "timestamp_utc": "2026-09-28T13:21:31.024077+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,13 +32,13 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (29 d\u00edas) - WIN-45E2DE3148AF",
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (43 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (30 d\u00edas) - WIN-45E2DE3148AF",
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (44 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-09-27T11:43:40.159083+00:00",
+            "ultima_consulta_utc": "2026-09-28T13:21:47.776357+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -78,50 +78,13 @@
             "partidos_hoy": [
                 {
                     "competicion": "SP2",
-                    "hora": "13:00",
-                    "hora_local": "07:00",
-                    "local": "Valladolid",
-                    "visitante": "Cordoba"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "15:15",
-                    "hora_local": "09:15",
-                    "local": "Mallorca",
-                    "visitante": "Almeria"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "17:30",
-                    "hora_local": "11:30",
-                    "local": "Burgos",
-                    "visitante": "Eldense"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "17:30",
-                    "hora_local": "11:30",
-                    "local": "Eibar",
-                    "visitante": "Las Palmas"
-                },
-                {
-                    "competicion": "SP2",
-                    "hora": "20:00",
-                    "hora_local": "14:00",
-                    "local": "Oviedo",
-                    "visitante": "Sp Gijon"
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Leganes",
+                    "visitante": "Castellon"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-09-28",
-                "competicion": "SP2",
-                "hora": "19:30",
-                "hora_local": "13:30",
-                "local": "Leganes",
-                "visitante": "Castellon"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
