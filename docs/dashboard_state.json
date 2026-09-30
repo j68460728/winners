@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-09-29T12:27:03.792308+00:00",
+    "timestamp_utc": "2026-09-30T12:12:26.189168+00:00",
     "estado_experimento": {
-        "evidence_age_days": 45,
+        "evidence_age_days": 46,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 4,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-09-29T12:26:49.986928+00:00",
+            "timestamp_utc": "2026-09-30T12:12:11.757462+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,13 +32,13 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (31 d\u00edas) - WIN-45E2DE3148AF",
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (45 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (32 d\u00edas) - WIN-45E2DE3148AF",
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (46 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-09-29T12:27:02.444118+00:00",
+            "ultima_consulta_utc": "2026-09-30T12:12:24.885472+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
@@ -62,93 +62,20 @@
             "partidos_hoy": [
                 {
                     "competicion": "EC",
-                    "hora": "19:00",
-                    "hora_local": "13:00",
-                    "local": "Boreham Wood",
-                    "visitante": "Kidderminster"
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Eastleigh",
+                    "visitante": "Southend"
                 },
                 {
                     "competicion": "EC",
                     "hora": "19:45",
                     "hora_local": "13:45",
-                    "local": "Barrow",
-                    "visitante": "Scunthorpe"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Forest Green",
-                    "visitante": "Wealdstone"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Fylde",
-                    "visitante": "Carlisle"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Gateshead",
-                    "visitante": "Altrincham"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Halifax",
-                    "visitante": "Boston Utd"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Hartlepool",
-                    "visitante": "Harrogate"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Hornchurch",
-                    "visitante": "Aldershot"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Woking",
-                    "visitante": "Solihull"
-                },
-                {
-                    "competicion": "EC",
-                    "hora": "19:45",
-                    "hora_local": "13:45",
-                    "local": "Yeovil",
-                    "visitante": "Worthing"
+                    "local": "Tamworth",
+                    "visitante": "Sutton"
                 }
             ]
         },
-        "proximos_partidos": [
-            {
-                "fecha": "2026-09-30",
-                "competicion": "EC",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Eastleigh",
-                "visitante": "Southend"
-            },
-            {
-                "fecha": "2026-09-30",
-                "competicion": "EC",
-                "hora": "19:45",
-                "hora_local": "13:45",
-                "local": "Tamworth",
-                "visitante": "Sutton"
-            }
-        ]
+        "proximos_partidos": []
     }
 }
