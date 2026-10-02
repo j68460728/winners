@@ -1,7 +1,7 @@
 {
-    "timestamp_utc": "2026-10-01T12:46:38.525953+00:00",
+    "timestamp_utc": "2026-10-02T12:10:29.662131+00:00",
     "estado_experimento": {
-        "evidence_age_days": 47,
+        "evidence_age_days": 48,
         "versiones_algoritmo": [
             "UNKNOWN"
         ],
@@ -15,7 +15,7 @@
         "predicciones_liquidadas": 4,
         "predicciones_invalidas": 0,
         "ultima_observacion": {
-            "timestamp_utc": "2026-10-01T12:46:21.052927+00:00",
+            "timestamp_utc": "2026-10-02T12:10:12.725161+00:00",
             "source": "football-data.co.uk",
             "leagues_inspected": 2,
             "matches_found": 0,
@@ -32,35 +32,526 @@
         "status": "FAIL",
         "message": "ALERTAS ACTIVAS",
         "alerts": [
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (33 d\u00edas) - WIN-45E2DE3148AF",
-            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (47 d\u00edas) - WIN-F5806D1EE75B"
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (34 d\u00edas) - WIN-45E2DE3148AF",
+            "ALERTA: Predicci\u00f3n pendiente demasiado antigua (48 d\u00edas) - WIN-F5806D1EE75B"
         ]
     },
     "observatorio": {
         "estado_fuente": {
-            "ultima_consulta_utc": "2026-10-01T12:46:36.764948+00:00",
+            "ultima_consulta_utc": "2026-10-02T12:10:27.972143+00:00",
             "archivos_descargados": [
                 "fixtures.csv",
                 "new_league_fixtures.csv"
             ],
-            "registros_main": 12,
-            "registros_extra": 25,
-            "total_registros": 37,
-            "total_competiciones": 1,
-            "ultima_fecha_main": "2026-09-30",
-            "ultima_fecha_extra": "N/A",
+            "registros_main": 46,
+            "registros_extra": 17,
+            "total_registros": 63,
+            "total_competiciones": 10,
+            "ultima_fecha_main": "2026-10-05",
+            "ultima_fecha_extra": "2026-10-06",
             "estado_main": "OK",
             "estado_extra": "OK"
         },
         "observacion_dia": {
             "ligas_activas": [
                 {
+                    "competicion": "Argentina - Liga Profesional",
+                    "partidos": 14
+                },
+                {
                     "competicion": "EC",
-                    "partidos": 12
+                    "partidos": 11
+                },
+                {
+                    "competicion": "SP2",
+                    "partidos": 11
+                },
+                {
+                    "competicion": "E3",
+                    "partidos": 8
+                },
+                {
+                    "competicion": "SC2",
+                    "partidos": 5
+                },
+                {
+                    "competicion": "SC3",
+                    "partidos": 5
+                },
+                {
+                    "competicion": "E2",
+                    "partidos": 3
+                },
+                {
+                    "competicion": "SC1",
+                    "partidos": 3
+                },
+                {
+                    "competicion": "Brazil - Serie A Betano",
+                    "partidos": 2
+                },
+                {
+                    "competicion": "Ireland - Premier Division",
+                    "partidos": 1
                 }
             ],
-            "partidos_hoy": []
+            "partidos_hoy": [
+                {
+                    "competicion": "SP2",
+                    "hora": "19:30",
+                    "hora_local": "13:30",
+                    "local": "Eldense",
+                    "visitante": "Oviedo"
+                },
+                {
+                    "competicion": "Argentina - Liga Profesional",
+                    "hora": "23:15",
+                    "hora_local": "17:15",
+                    "local": "Independiente",
+                    "visitante": "Instituto"
+                },
+                {
+                    "competicion": "Ireland - Premier Division",
+                    "hora": "19:45",
+                    "hora_local": "13:45",
+                    "local": "Dundalk",
+                    "visitante": "Bohemians"
+                }
+            ]
         },
-        "proximos_partidos": []
+        "proximos_partidos": [
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Brazil - Serie A Betano",
+                "hora": "00:00",
+                "hora_local": "18:00",
+                "local": "Sao Paulo",
+                "visitante": "Santos"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "01:30",
+                "hora_local": "19:30",
+                "local": "Boca Juniors",
+                "visitante": "Union de Santa Fe"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "01:30",
+                "hora_local": "19:30",
+                "local": "Ind. Rivadavia",
+                "visitante": "Gimnasia L.P."
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "12:30",
+                "hora_local": "06:30",
+                "local": "Chesterfield",
+                "visitante": "Tranmere"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SP2",
+                "hora": "13:00",
+                "hora_local": "07:00",
+                "local": "Albacete",
+                "visitante": "Eibar"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Burton",
+                "visitante": "Huddersfield"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Leyton Orient",
+                "visitante": "Plymouth"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Reading",
+                "visitante": "Bradford"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Accrington",
+                "visitante": "Cheltenham"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Crewe",
+                "visitante": "Bristol Rvs"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Exeter",
+                "visitante": "Rotherham"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Gillingham",
+                "visitante": "Newport County"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Grimsby",
+                "visitante": "Shrewsbury"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Rochdale",
+                "visitante": "Swindon"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "E3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Salford",
+                "visitante": "Fleetwood Town"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Aldershot",
+                "visitante": "Carlisle"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Barrow",
+                "visitante": "Wealdstone"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Boreham Wood",
+                "visitante": "Altrincham"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Eastleigh",
+                "visitante": "Woking"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Gateshead",
+                "visitante": "Worthing"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Harrogate",
+                "visitante": "Hornchurch"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Hartlepool",
+                "visitante": "Tamworth"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Kidderminster",
+                "visitante": "Sutton"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Solihull",
+                "visitante": "Halifax"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Southend",
+                "visitante": "Fylde"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "EC",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Yeovil",
+                "visitante": "Boston Utd"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC1",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Livingston",
+                "visitante": "Ayr"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC1",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Morton",
+                "visitante": "Raith Rvs"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC1",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Partick",
+                "visitante": "Arbroath"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Airdrie Utd",
+                "visitante": "Montrose"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "East Fife",
+                "visitante": "East Kilbride"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Queen of Sth",
+                "visitante": "Cove Rangers"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC2",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Ross County",
+                "visitante": "Alloa"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Annan Athletic",
+                "visitante": "Stirling"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Dumbarton",
+                "visitante": "Forfar"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Elgin",
+                "visitante": "Clyde"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Spartans",
+                "visitante": "Kelty Hearts"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC3",
+                "hora": "15:00",
+                "hora_local": "09:00",
+                "local": "Stranraer",
+                "visitante": "Edinburgh City"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SP2",
+                "hora": "15:15",
+                "hora_local": "09:15",
+                "local": "Almeria",
+                "visitante": "Burgos"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SC2",
+                "hora": "17:30",
+                "hora_local": "11:30",
+                "local": "Hamilton",
+                "visitante": "Peterhead"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SP2",
+                "hora": "17:30",
+                "hora_local": "11:30",
+                "local": "Cadiz",
+                "visitante": "Leganes"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "SP2",
+                "hora": "17:30",
+                "hora_local": "11:30",
+                "local": "Sabadell",
+                "visitante": "Andorra"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "18:45",
+                "hora_local": "12:45",
+                "local": "Defensa y Justicia",
+                "visitante": "San Lorenzo"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "21:00",
+                "hora_local": "15:00",
+                "local": "Atl. Tucuman",
+                "visitante": "Barracas Central"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "21:00",
+                "hora_local": "15:00",
+                "local": "Newells Old Boys",
+                "visitante": "Lanus"
+            },
+            {
+                "fecha": "2026-10-03",
+                "competicion": "Brazil - Serie A Betano",
+                "hora": "22:30",
+                "hora_local": "16:30",
+                "local": "Atletico-MG",
+                "visitante": "Bragantino"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "SP2",
+                "hora": "13:00",
+                "hora_local": "07:00",
+                "local": "Sociedad B",
+                "visitante": "Granada"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "SP2",
+                "hora": "15:15",
+                "hora_local": "09:15",
+                "local": "Sp Gijon",
+                "visitante": "Celta B"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "SP2",
+                "hora": "17:30",
+                "hora_local": "11:30",
+                "local": "Castellon",
+                "visitante": "Ceuta"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "SP2",
+                "hora": "17:30",
+                "hora_local": "11:30",
+                "local": "Las Palmas",
+                "visitante": "Valladolid"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "18:45",
+                "hora_local": "12:45",
+                "local": "Huracan",
+                "visitante": "Aldosivi"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "SP2",
+                "hora": "20:00",
+                "hora_local": "14:00",
+                "local": "Girona",
+                "visitante": "Mallorca"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "21:00",
+                "hora_local": "15:00",
+                "local": "Talleres Cordoba",
+                "visitante": "Belgrano"
+            },
+            {
+                "fecha": "2026-10-04",
+                "competicion": "Argentina - Liga Profesional",
+                "hora": "23:15",
+                "hora_local": "17:15",
+                "local": "Argentinos Jrs",
+                "visitante": "Tigre"
+            }
+        ]
     }
 }
